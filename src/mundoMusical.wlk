@@ -52,13 +52,20 @@ object lucia {
 	method banda() = "Pimpinela"
 	
 	method interpretaBien(cancion) = (cancion.letra().contains("familia"))
+	
+	method lugarConcurrido(lugar) = (lugar.capacidad() > 5000) // no funciona con la trastienda(Arreglar)
+	
 }
 
 object luisAlberto {
 	
-	
+	method habilidad(guitarra) = (guitarra.valor() * 8)
 }
 
+object fender{
+	
+	method valor() = 10
+}
 object cisne {
 	
 	
@@ -78,7 +85,18 @@ object laFamilia {
 	
 }
 
+object lunaPark {
+	
+	method capacidad() = 9290
+	
+}
 
+object laTrastienda {
+	
+	method capacidadPlantaBaja() = 400
+	method capacidadPrimerPiso() = 300 // únicamente los sabado.
+	
+}
 
 
 
