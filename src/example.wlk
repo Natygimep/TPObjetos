@@ -1,5 +1,11 @@
-object musico {
+object mundoMusical {
+	const musicos = []
 	const habilidad = 0
+	
+	method musicos() = musicos
+	method musicos(nuevoMusico) {
+		musicos = nuevoMusico
+	}
 	method habilidad() = habilidad
 	method habilidad(nuevaHabilidad) {
 		habilidad = nuevaHabilidad
@@ -12,5 +18,8 @@ object musico {
 	method costo(nuevoCosto) {
 		costo = nuevoCosto
 	}
+	
+}
+object joaquin {
 	
 }
