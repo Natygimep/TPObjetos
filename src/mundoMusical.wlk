@@ -64,7 +64,12 @@ object luisAlberto {
 
 object fender{
 	
-	method valor() = 10
+	const valor = 10
+	//method valor() = 10
+}
+object gibson{
+	const valor = 15
+	
 }
 object cisne {
 	
