@@ -69,8 +69,7 @@ object fender{
 object cisne {
 	
 	
-	method letra() = "Hoy" // hay que poner toda la letra del tema :/
-	
+	method letra() = "Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar"
 	
 	method duracion() = 312
 	
@@ -78,7 +77,7 @@ object cisne {
 
 object laFamilia {
 	
-	method letra() = "la blabla de la familia" // hay que poner toda la letra del tema :/
+	method letra() = "Quiero brindar por mi gente sencilla, por el amor brindo por la familia"
 	
 	
 	method duracion() = 264
@@ -94,7 +93,7 @@ object lunaPark {
 object laTrastienda {
 	
 	method capacidadPlantaBaja() = 400
-	method capacidadPrimerPiso() = 300 // únicamente los sabado.
+	method capacidadPrimerPiso() = 300 // únicamente los sabados.
 	
 }
 
