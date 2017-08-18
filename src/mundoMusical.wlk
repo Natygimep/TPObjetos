@@ -28,19 +28,20 @@ object mundoMusical {
 object joaquin {
 	
 	var habilidad = 20
-	var cantaSolo = true
+	var cantaSolo = true			//Recontra turbio pero fue.
 	
-	method habilidad() {
+	method habilidad() { 			//Esto esta medio turbio pero no se me ocurre de otra manera.
 		if(cantaSolo){
 			return habilidad
 		}
 		else{
-			return (habilidad += 5)
+			return (habilidad + 5)
 		}
 	} 
-	method habilidad(nuevaHabilidad){
-		habilidad = nuevaHabilidad
-	}
+	
+	method cantaEnGrupo() {			//Esto es aún mas turbio 
+			cantaSolo = false
+		}
 	
 	method interpretaBien(cancion) = (cancion.duracion() > 300)
 	
@@ -51,11 +52,19 @@ object joaquin {
 object lucia {
 	var habilidad = 70
 	var dineroCobrado = 0
+	var cantaSolo = true		// Idem en joaquin
 	
-	method habilidad() = habilidad
-	method habilidad(nuevaHabilidad){
-		habilidad = nuevaHabilidad
+	method habilidad() {
+		if(cantaSolo){
+		return habilidad 
+		}
+		else {
+			return (habilidad - 20)
+		}
 	}
+	method cantaEnGrupo() {			//Esto es aún mas turbio 
+			cantaSolo = false
+		}
 	
 	method banda() = "Pimpinela"
 	
@@ -63,7 +72,7 @@ object lucia {
 	
 	method lugarConcurrido(lugar) = (lugar.capacidad() > 5000) // no funciona con la trastienda(Arreglar)
 	
-	method cobrar(lugar){
+	method cobra(lugar){
 		if (self.lugarConcurrido(lugar)){
 			dineroCobrado += 500
 		}
@@ -71,6 +80,8 @@ object lucia {
 			dineroCobrado += 400
 		}
 	}
+	
+	method dineroCobrado() = dineroCobrado  
 }
 
 object luisAlberto {
@@ -84,12 +95,9 @@ object fender{
 	//method valor() = 10
 }
 object gibson{
-	var valor = 15
+		
+	//method valor() = valor
 	
-	method valor() = valor
-	method cambiarValor(nuevoValor) = {
-		valor = nuevoValor
-	}
 }
 object cisne {
 	
