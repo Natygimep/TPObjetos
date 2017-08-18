@@ -1,4 +1,4 @@
-object mundoMusical {
+/*object mundoMusical {
 	var musicos = []  // me marcaba error por eso lo cambie a VAR
 	var habilidad = 0 // me marcaba error por eso lo cambie a VAR
 	var costo = 0 // me tiraba error si no lo inicializaba 
@@ -17,14 +17,14 @@ object mundoMusical {
 	method ejecutaBien () {
 		ejecutaBien
 	}
-*/	
-	method costo() = costo
+	
+	methodd costo() = costo
 	method costo(nuevoCosto) {
 		costo = nuevoCosto
 	}
 	
 }
-
+*/
 object joaquin {
 	
 	var habilidad = 20
@@ -87,6 +87,10 @@ object lucia {
 object luisAlberto {
 	
 	method habilidad(guitarra) = (guitarra.valor() * 8)
+	
+	method interpretaBien(cancion){
+		return true
+	}
 }
 
 object fender{
