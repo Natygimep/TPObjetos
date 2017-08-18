@@ -1,10 +1,11 @@
 object joaquin {
 	
 	var habilidad = 20
-	var cantaSolo = true			//Recontra turbio pero fue.
+	// var cantaSolo = true			//Recontra turbio pero fue.
+	// yo haria un metodo cantaSolo que devuelva true o false segun corresponda
 	
 	method habilidad() { 			//Esto esta medio turbio pero no se me ocurre de otra manera.
-		if(cantaSolo){
+		if(self.cantaSolo()){
 			return habilidad
 		}
 		else{
@@ -12,9 +13,9 @@ object joaquin {
 		}
 	} 
 	
-	method cantaEnGrupo() {			//Esto es aún mas turbio. 
-			cantaSolo = false
-		}
+	
+	method cantaSolo() = return true  // aca falta inventar algo nuevo
+	method cantaEnGrupo() = return false
 	
 	method interpretaBien(cancion) = (cancion.duracion() > 300)
 	
@@ -24,7 +25,6 @@ object joaquin {
 
 object lucia {
 	var habilidad = 70
-	var dineroCobrado = 0
 	var cantaSolo = true		//Seguimos con lo turbio.
 	
 	method habilidad() {
@@ -42,29 +42,33 @@ object lucia {
 	method banda() = "Pimpinela"
 	
 	method interpretaBien(cancion) = (cancion.letra().contains("familia"))
-	
-	method lugarConcurrido(lugar) = (lugar.capacidad() > 5000) 					// no funciona con la trastienda(Arreglar)
-	
+
 	method cobra(lugar){
-		if (self.lugarConcurrido(lugar)){
-			dineroCobrado += 500
+		if (lugar.esConcurrido()){
+			return 500
 		}
 		else{
-			dineroCobrado += 400
+			return 400
 		}
 	}
-	
-	method dineroCobrado() = dineroCobrado  
+
 }
 
 object luisAlberto {
 	
-	method habilidad(guitarra) = (guitarra.valor() * 8)
+	method habilidad(guitarra) = [100,guitarra.valor() * 8].min()   // minimo entre 100 y el valor x 8 ya que el tope es 100
 	
-	method interpretaBien(cancion){								//Hay que preguntar si se puede hacer de otra forma menos hardcodeada 
-		return true
+	method interpretaBien(cancion) = return true
+	
+	method cobra(funcion){
+		// if(funcion.fecha() < septiembre 2017){         // despues averiguo bien como manejar fecchas
+		//	return 1000
+		// }else{return 1200}
 	}
+	
 }
+
+
 
 object fender{
 
@@ -72,9 +76,13 @@ object fender{
 }
 object gibson{
 		
-	//method valor() = valor
+	// method valor() = 15 - nose como saber si esta sana o no quien me lo dice?
+	
 	
 }
+
+
+
 object cisne {
 	
 	
@@ -88,12 +96,13 @@ object laFamilia {
 	
 	method letra() = "Quiero brindar por mi gente sencilla, por el amor brindo por la familia"
 	
-	
 	method duracion() = 264
 	
 }
 
 object lunaPark {
+	
+	method esConcurrido() = self.capacidad() > 5000 // cuando creemos las clases este methodo va a provenir de ahi
 	
 	method capacidad() = 9290
 	
@@ -101,8 +110,10 @@ object lunaPark {
 
 object laTrastienda {
 	
-	method capacidad() = 400
+	method esConcurrido() = self.capacidad() > 5000
 	
+	method capacidad() = 400 // ´para mi no deberia ir en dos metodos separados, 1 que diga 400 y si es sabado 700, nose como saber si es sabado? 
+
 	method capacidadPrimerPiso() = 300 // únicamente los sabados.
 	
 }
