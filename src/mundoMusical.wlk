@@ -1,30 +1,3 @@
-/*object mundoMusical {
-	var musicos = []  // me marcaba error por eso lo cambie a VAR
-	var habilidad = 0 // me marcaba error por eso lo cambie a VAR
-	var costo = 0 // me tiraba error si no lo inicializaba 
-	
-	method musicos() = musicos
-	method musicos(nuevoMusico) {
-		musicos = nuevoMusico
-	}
-	
-	method habilidad() = habilidad
-	method habilidad(nuevaHabilidad) {
-		habilidad = nuevaHabilidad
-	}
-/* 	  lo comente porque me tiraba error en mi IDE de wollok
-	method ejecutaBien ()= []
-	method ejecutaBien () {
-		ejecutaBien
-	}
-	
-	methodd costo() = costo
-	method costo(nuevoCosto) {
-		costo = nuevoCosto
-	}
-	
-}
-*/
 object joaquin {
 	
 	var habilidad = 20
@@ -39,7 +12,7 @@ object joaquin {
 		}
 	} 
 	
-	method cantaEnGrupo() {			//Esto es aún mas turbio 
+	method cantaEnGrupo() {			//Esto es aún mas turbio. 
 			cantaSolo = false
 		}
 	
@@ -52,7 +25,7 @@ object joaquin {
 object lucia {
 	var habilidad = 70
 	var dineroCobrado = 0
-	var cantaSolo = true		// Idem en joaquin
+	var cantaSolo = true		//Seguimos con lo turbio.
 	
 	method habilidad() {
 		if(cantaSolo){
@@ -62,7 +35,7 @@ object lucia {
 			return (habilidad - 20)
 		}
 	}
-	method cantaEnGrupo() {			//Esto es aún mas turbio 
+	method cantaEnGrupo() {			//Esto es aún mas turbio. 
 			cantaSolo = false
 		}
 	
@@ -70,7 +43,7 @@ object lucia {
 	
 	method interpretaBien(cancion) = (cancion.letra().contains("familia"))
 	
-	method lugarConcurrido(lugar) = (lugar.capacidad() > 5000) // no funciona con la trastienda(Arreglar)
+	method lugarConcurrido(lugar) = (lugar.capacidad() > 5000) 					// no funciona con la trastienda(Arreglar)
 	
 	method cobra(lugar){
 		if (self.lugarConcurrido(lugar)){
@@ -88,15 +61,14 @@ object luisAlberto {
 	
 	method habilidad(guitarra) = (guitarra.valor() * 8)
 	
-	method interpretaBien(cancion){
+	method interpretaBien(cancion){								//Hay que preguntar si se puede hacer de otra forma menos hardcodeada 
 		return true
 	}
 }
 
 object fender{
-	
-	const valor = 10
-	//method valor() = 10
+
+	method valor() = 10
 }
 object gibson{
 		
