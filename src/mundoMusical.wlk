@@ -28,8 +28,16 @@ object mundoMusical {
 object joaquin {
 	
 	var habilidad = 20
+	var cantaSolo = true
 	
-	method habilidad() = habilidad
+	method habilidad() {
+		if(cantaSolo){
+			return habilidad
+		}
+		else{
+			return (habilidad += 5)
+		}
+	} 
 	method habilidad(nuevaHabilidad){
 		habilidad = nuevaHabilidad
 	}
@@ -41,8 +49,8 @@ object joaquin {
 }
 
 object lucia {
-	
 	var habilidad = 70
+	var dineroCobrado = 0
 	
 	method habilidad() = habilidad
 	method habilidad(nuevaHabilidad){
@@ -55,6 +63,14 @@ object lucia {
 	
 	method lugarConcurrido(lugar) = (lugar.capacidad() > 5000) // no funciona con la trastienda(Arreglar)
 	
+	method cobrar(lugar){
+		if (self.lugarConcurrido(lugar)){
+			dineroCobrado += 500
+		}
+		else{
+			dineroCobrado += 400
+		}
+	}
 }
 
 object luisAlberto {
@@ -68,8 +84,12 @@ object fender{
 	//method valor() = 10
 }
 object gibson{
-	const valor = 15
+	var valor = 15
 	
+	method valor() = valor
+	method cambiarValor(nuevoValor) = {
+		valor = nuevoValor
+	}
 }
 object cisne {
 	
@@ -97,7 +117,8 @@ object lunaPark {
 
 object laTrastienda {
 	
-	method capacidadPlantaBaja() = 400
+	method capacidad() = 400
+	
 	method capacidadPrimerPiso() = 300 // únicamente los sabados.
 	
 }
