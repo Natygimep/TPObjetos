@@ -68,7 +68,7 @@ object luisAlberto {
 
 object fender{
 
-	method valor() = 10
+	method valor() = 10				//si estaba como constante no podia hacer el método habilidad de luisAlberto.
 }
 object gibson{
 		
