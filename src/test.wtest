@@ -1,100 +1,103 @@
 import mundoMusical.*
 
+describe "tests respecto de los músicos" {
+
 test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
 
-	assert.equals(joaquin.habilidad(), 25)
+	assert.equals(joaquin.habilidad("conLucia"), 25)
 
 }
 
-test "La habilidad de Joaquín cantando solo debe ser 20" {
+//test "La habilidad de Joaquín cantando solo debe ser 20" {
 
-	assert.equals(joaquin.habilidad(cantaSolo), 20)
+	//assert.equals(joaquin.habilidad(cantaSolo), 20)
 
-}
+//}
 
-test "La habilidad de Lucía cantando en Pimpinela debe ser 50" {
+//test "La habilidad de Lucía cantando en Pimpinela debe ser 50" {
+//
+	//assert.equals(lucia.habilidad(), 50)
 
-	assert.equals(lucia.habilidad(), 50)
+//}
+//test "La habilidad de Lucía cantando sola debe ser 70" {
 
-}
-test "La habilidad de Lucía cantando sola debe ser 70" {
+//	assert.equals(lucia.habilidad(cantaSolo), 70)
 
-	assert.equals(lucia.habilidad(cantaSolo), 70)
+//}
 
-}
+//test "La habilidad de Luis Alberto tocando con la fender es 80" {
+	//assert.equals(luisAlberto.habilidad(fender), 80)
+//}
 
-test "La habilidad de Luis Alberto tocando con la fender es 80" {
-	assert.equals(luisAlberto.habilidad(fender), 80)
-}
+//test "La habilidad de Luis Alberto tocando con la gibson sana es 80" {
+//	assert.equals(luisAlberto.habilidad(gibson), 100)
+//}
 
-test "La habilidad de Luis Alberto tocando con la gibson sana es 80" {
-	assert.equals(luisAlberto.habilidad(gibson), 100)
-}
+//test "La habilidad de Luis Alberto tocando con la gibson maltratada es 40" {
+//	assert.equals(luisAlberto.habilidad(gibson), 40)
+//}
 
-test "La habilidad de Luis Alberto tocando con la gibson maltratada es 40" {
-	assert.equals(luisAlberto.habilidad(gibson), 40)
-}
+//test "Joaquín interpreta mal la canción La Familia" {
+	//assert.notThat(joaquin.interpretaBien(laFamilia))
+//}
 
-test "Joaquín interpreta mal la canción La Familia" {
-	assert.notThat(joaquin.interpretaBien(laFamilia))
-}
+//test "Joaquín interpreta bien la canción Cisne" {
+//	assert.that(joaquin.interpretaBien(cisne))
+//}
 
-test "Joaquín interpreta bien la canción Cisne" {
-	assert.that(joaquin.interpretaBien(cisne))
-}
+//test "Lucía interpreta bien la canción La Familia" {
+//	assert.that(lucia.interpretaBien(laFamilia))
+//}
 
-test "Lucía interpreta bien la canción La Familia" {
-	assert.that(lucia.interpretaBien(laFamilia))
-}
+//test "Lucía interpreta mal la canción Cisne" {
+	//assert.notThat(lucia.interpretaBien(cisne))
+//}
 
-test "Lucía interpreta mal la canción Cisne" {
-	assert.notThat(lucia.interpretaBien(cisne))
-}
+//test "Luis Alberto interpreta bien la canción Cisne" {
+//	assert.that(luisAlberto.interpretaBien(cisne))
+//}
 
-test "Luis Alberto interpreta bien la canción Cisne" {
-	assert.that(luisAlberto.interpretaBien(cisne))
-}
+//test "Luis Alberto interpreta bien la canción La Familia" {
+//	assert.that(luisAlberto.interpretaBien(laFamilia))
+//}
 
-test "Luis Alberto interpreta bien la canción La Familia" {
-	assert.that(luisAlberto.interpretaBien(laFamilia))
-}
+//test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {
+//	assert.equals(joaquin.cobra(lunaPark), 50)
+//}
 
-test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {
-	assert.equals(joaquin.cobra(lunaPark), 50)
-}
+//test "Joaquín actúa solo en La Trastienda y cobra 100" {
+//	assert.equals(joaquin.cobra(laTrastienda), 100)
+//}
 
-test "Joaquín actúa solo en La Trastienda y cobra 100" {
-	assert.equals(joaquin.cobra(laTrastienda), 100)
-}
+//test "la capacidad de La Trastienda para el 05/08/2017 es 700" {
+//	assert.equals(laTrastienda.capacidad(05/08/2017), 700)
+//}
 
-test "la capacidad de La Trastienda para el 05/08/2017 es 700" {
-	assert.equals(laTrastienda.capacidad(05/08/2017), 700)
-}
+//test "la capacidad de La Trastienda para el 08/08/2017 es 400" {
+//	assert.equals(laTrastienda.capacidad(08/08/2017), 400)
+//}
 
-test "la capacidad de La Trastienda para el 08/08/2017 es 400" {
-	assert.equals(laTrastienda.capacidad(08/08/2017), 400)
-}
+//test "Lucía cobra 500 por actuar ¿con Pimpinela? en el Luna Park" {
+//	assert.equals(lucia.cobra(lunaPark), 500)
+//}
 
-test "Lucía cobra 500 por actuar ¿con Pimpinela? en el Luna Park" {
-	assert.equals(lucia.cobra(lunaPark), 500)
-}
+//test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {
+//	assert.equals(lucia.cobra(laTrastienda), 400)
+//}
 
-test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {
-	assert.equals(lucia.cobra(laTrastienda), 400)
-}
+//test "Luis Alberto cobra 1000 por actuar antes de septiembre 2017 en el Luna Park" {
+	//assert.equals(luisAlberto.cobra(01/08/2017), 1000)
+//}
 
-test "Luis Alberto cobra 1000 por actuar antes de septiembre 2017 en el Luna Park" {
-	assert.equals(luisAlberto.cobra(01/08/2017), 1000)
-}
+//test "Luis Alberto cobra 1200 por actuar despes de septiembre 2017 en el La Trastienda" {
+//	assert.equals(luisAlberto.cobra(01/10/2017), 1200)
+//}
 
-test "Luis Alberto cobra 1200 por actuar despes de septiembre 2017 en el La Trastienda" {
-	assert.equals(luisAlberto.cobra(01/10/2017), 1200)
-}
+//test "El costo de la presentación de los tres en el Luna Park es 1550" {
+//	assert.equals(lunaPark.costoTotal(), 1550)
+//}
 
-test "El costo de la presentación de los tres en el Luna Park es 1550" {
-	assert.equals(lunaPark.costoTotal(), 1550)
-}
-
-test "El costo de la presentación de los tres en el La Trastienda el 15/11/2017 es 1650" {
-	assert.equals(laTrastienda.costoTotal(15/11/2017), 1650)
+//test "El costo de la presentación de los tres en el La Trastienda el 15/11/2017 es 1650" {
+//	assert.equals(laTrastienda.costoTotal(15/11/2017), 1650)
+//}
 }

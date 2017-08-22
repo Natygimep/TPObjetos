@@ -1,21 +1,15 @@
 object joaquin {
 	
 	var habilidad = 20
-	// var cantaSolo = true			//Recontra turbio pero fue.
-	// yo haria un metodo cantaSolo que devuelva true o false segun corresponda
 	
-	method habilidad() { 			//Esto esta medio turbio pero no se me ocurre de otra manera.
-		if(self.cantaSolo()){
+	method habilidad(conQuienCanta) { 			//Esto esta medio turbio pero no se me ocurre de otra manera.
+		if(conQuienCanta == "solo") {
 			return habilidad
 		}
 		else{
 			return (habilidad + 5)
 		}
 	} 
-	
-	
-	method cantaSolo() = return true  // aca falta inventar algo nuevo
-	method cantaEnGrupo() = return false
 	
 	method interpretaBien(cancion) = (cancion.duracion() > 300)
 	
