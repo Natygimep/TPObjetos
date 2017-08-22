@@ -13,7 +13,15 @@ object joaquin {
 	
 	method interpretaBien(cancion) = (cancion.duracion() > 300)
 	
-	method banda() = "Pimpinela"
+	method cobra(horas, conQuienCanta) {                         //este método no tiene en cuenta el lugar
+		if (conQuienCanta == "solo") {
+			return (horas * 100)
+		}
+		else {
+			return (horas * 50)
+		}
+		
+	}
 		
 }
 
@@ -29,7 +37,6 @@ object lucia {
 		}
 	}
 	
-	method banda() = "Pimpinela"
 	
 	method interpretaBien(cancion) = (cancion.letra().contains("familia"))
 
