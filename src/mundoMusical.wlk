@@ -2,7 +2,7 @@ object joaquin {
 	
 	var habilidad = 20
 	
-	method habilidad(conQuienCanta) { 			//Esto esta medio turbio pero no se me ocurre de otra manera.
+	method habilidad(conQuienCanta) { 			
 		if(conQuienCanta == "solo") {
 			return habilidad
 		}
@@ -19,19 +19,15 @@ object joaquin {
 
 object lucia {
 	var habilidad = 70
-	var cantaSolo = true		//Seguimos con lo turbio.
 	
-	method habilidad() {
-		if(cantaSolo){
+	method habilidad(conQuienCanta) {
+		if(conQuienCanta == "sola"){
 		return habilidad 
 		}
 		else {
 			return (habilidad - 20)
 		}
 	}
-	method cantaEnGrupo() {			//Esto es aún mas turbio. 
-			cantaSolo = false
-		}
 	
 	method banda() = "Pimpinela"
 	
