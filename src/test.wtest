@@ -38,21 +38,21 @@ test "La habilidad de Lucía cantando sola debe ser 70" {
 //	assert.equals(luisAlberto.habilidad(gibson), 40)
 //}
 
-//test "Joaquín interpreta mal la canción La Familia" {
-	//assert.notThat(joaquin.interpretaBien(laFamilia))
-//}
+test "Joaquín interpreta mal la canción La Familia" {
+	assert.notThat(joaquin.interpretaBien(laFamilia))
+}
 
-//test "Joaquín interpreta bien la canción Cisne" {
-//	assert.that(joaquin.interpretaBien(cisne))
-//}
+test "Joaquín interpreta bien la canción Cisne" {
+	assert.that(joaquin.interpretaBien(cisne))
+}
 
-//test "Lucía interpreta bien la canción La Familia" {
-//	assert.that(lucia.interpretaBien(laFamilia))
-//}
+test "Lucía interpreta bien la canción La Familia" {
+	assert.that(lucia.interpretaBien(laFamilia))
+}
 
-//test "Lucía interpreta mal la canción Cisne" {
-	//assert.notThat(lucia.interpretaBien(cisne))
-//}
+test "Lucía interpreta mal la canción Cisne" {
+	assert.notThat(lucia.interpretaBien(cisne))
+}
 
 //test "Luis Alberto interpreta bien la canción Cisne" {
 //	assert.that(luisAlberto.interpretaBien(cisne))
