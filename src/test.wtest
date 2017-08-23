@@ -55,13 +55,13 @@ test "Lucía interpreta mal la canción Cisne" {
 	assert.notThat(lucia.interpretaBien(cisne))
 }
 
-//test "Luis Alberto interpreta bien la canción Cisne" {
-//	assert.that(luisAlberto.interpretaBien(cisne))
-//}
+test "Luis Alberto interpreta bien la canción Cisne" {
+	assert.that(luisAlberto.interpretaBien(cisne))
+}
 
-//test "Luis Alberto interpreta bien la canción La Familia" {
-//	assert.that(luisAlberto.interpretaBien(laFamilia))
-//}
+test "Luis Alberto interpreta bien la canción La Familia" {
+	assert.that(luisAlberto.interpretaBien(laFamilia))
+}
 
 test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {   //no importa donde actúa, es el precio de la hora
 	assert.equals(joaquin.cobra(1, "conLucia"), 50)
