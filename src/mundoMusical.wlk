@@ -64,17 +64,21 @@ object luisAlberto {
 	
 }
 
-
-
 object fender{
 
-	method valor() = 10				//si estaba como constante no podia hacer el método habilidad de luisAlberto.
+	method valor() = 10				
 }
 object gibson{
-		
-	// method valor() = 15 - nose como saber si esta sana o no quien me lo dice?
+	 var valor = 15
+	 
+	 method valor() = valor
+	 method valor(nuevoValor) {
+	 	valor = nuevoValor
+	 }      
 	
-	
+	method maltrataGibson() {
+		self.valor(5)
+	}
 }
 
 

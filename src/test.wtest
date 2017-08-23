@@ -26,17 +26,18 @@ test "La habilidad de Lucía cantando sola debe ser 70" {
 
 }
 
-//test "La habilidad de Luis Alberto tocando con la fender es 80" {
-	//assert.equals(luisAlberto.habilidad(fender), 80)
-//}
+test "La habilidad de Luis Alberto tocando con la fender es 80" {
+	assert.equals(luisAlberto.habilidad(fender), 80)
+}
 
-//test "La habilidad de Luis Alberto tocando con la gibson sana es 80" {
-//	assert.equals(luisAlberto.habilidad(gibson), 100)
-//}
+test "La habilidad de Luis Alberto tocando con la gibson sana es 80" {
+	assert.equals(luisAlberto.habilidad(gibson), 100)
+}
 
-//test "La habilidad de Luis Alberto tocando con la gibson maltratada es 40" {
-//	assert.equals(luisAlberto.habilidad(gibson), 40)
-//}
+test "La habilidad de Luis Alberto tocando con la gibson maltratada es 40" {
+	gibson.maltrataGibson()
+	assert.equals(luisAlberto.habilidad(gibson), 40)
+}
 
 test "Joaquín interpreta mal la canción La Familia" {
 	assert.notThat(joaquin.interpretaBien(laFamilia))
