@@ -37,7 +37,6 @@ object lucia {
 		}
 	}
 	
-	
 	method interpretaBien(cancion) = (cancion.letra().contains("familia"))
 
 	method cobra(lugar){

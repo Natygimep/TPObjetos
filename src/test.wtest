@@ -78,13 +78,13 @@ test "Joaquín actúa solo en La Trastienda y cobra 100" {             //no import
 //	assert.equals(laTrastienda.capacidad(08/08/2017), 400)
 //}
 
-//test "Lucía cobra 500 por actuar ¿con Pimpinela? en el Luna Park" {
-//	assert.equals(lucia.cobra(lunaPark), 500)
-//}
+test "Lucía cobra 500 por actuar ¿con Pimpinela? en el Luna Park" {      //no importa si canta sola o no
+	assert.equals(lucia.cobra(lunaPark), 500)
+}
 
-//test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {
-//	assert.equals(lucia.cobra(laTrastienda), 400)
-//}
+test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {   //no importa si canta sola o no
+	assert.equals(lucia.cobra(laTrastienda), 400)
+}
 
 //test "Luis Alberto cobra 1000 por actuar antes de septiembre 2017 en el Luna Park" {
 	//assert.equals(luisAlberto.cobra(01/08/2017), 1000)
