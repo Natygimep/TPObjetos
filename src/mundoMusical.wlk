@@ -1,55 +1,67 @@
-object joaquin {
+class MusicoDeGrupo {
 	
 	var habilidad = 20
+	var precio = 100
 	
-	method habilidad(conQuienCanta) { 			
-		if(conQuienCanta == "solo") {
-			return habilidad
-		}
-		else{
-			return (habilidad + 5)
-		}
-	} 
-	
-	method interpretaBien(cancion) = (cancion.duracion() > 300)
-	
-	method cobra(horas, conQuienCanta) {                         //este método no tiene en cuenta el lugar
-		if (conQuienCanta == "solo") {
-			return (horas * 100)
-		}
-		else {
-			return (horas * 50)
-		}
-		
+	method precio() {
+		return precio
 	}
-		
+	method precio(nuevoPrecio) {
+		precio = nuevoPrecio
+	}
+	method habilidad()	{
+		return habilidad
+	}
+	method habilidad(nuevaHabilidad) {
+		habilidad = nuevaHabilidad
+	}
+	method aumentarHabilidad(cuantoAumenta) {
+		self.habilidad(self.habilidad()+cuantoAumenta)
+	}
+	method interpretaBien(cancion) = (cancion.duracion() > 300)
+	method cobra(horas) {
+		return precio*horas
+	}
+	method tocaEnGrupo(aumentoHabilidad) {
+		self.aumentarHabilidad(aumentoHabilidad)
+		self.precio(50)
+	}
+	
 }
-
-object lucia { 
+class MusicoSolista { 
 	
 	var habilidad = 70
+	const palabra = "familia"
 	
-	method habilidad(conQuienCanta) {
-		if(conQuienCanta == "sola"){
-		return habilidad 
-		}
-		else {
-			return (habilidad - 20)
-		}
+	method disminuirHabilidad(cuantoDisminuye) {
+		self.aumentarHabilidad(cuantoDisminuye*-1)
 	}
-	
-	method interpretaBien(cancion) = (cancion.letra().contains("familia"))
-
-	method cobra(lugar){
-		if (lugar.esConcurrido()){
+	method habilidad()	{
+		return habilidad
+	}
+	method habilidad(nuevaHabilidad) {
+		habilidad = nuevaHabilidad
+	}
+	method aumentarHabilidad(cuantoAumenta) {
+		self.habilidad(self.habilidad()+cuantoAumenta)
+	}
+	method interpretaBien(cancion) = (cancion.letra().contains(palabra))
+	method cobra(lugar) {
+		if (lugar.esConcurrido()) {
 			return 500
-		}
-		else{
+		}else{
 			return 400
 		}
 	}
-
+	method tocaEnGrupo() {
+		self.disminuirHabilidad(20)
+	}
+	
 }
+
+object joaquin inherits MusicoDeGrupo{}
+
+object lucia inherits MusicoSolista{}
 
 object luisAlberto {
 	
