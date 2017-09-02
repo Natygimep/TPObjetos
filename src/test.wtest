@@ -2,7 +2,7 @@ import mundoMusical.*
 
 describe "tests respecto de los músicos" {
 
-test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
+/*test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
 
 	assert.equals(joaquin.habilidad("conLucia"), 25)
 
@@ -24,7 +24,7 @@ test "La habilidad de Lucía cantando sola debe ser 70" {
 
 	assert.equals(lucia.habilidad("sola"), 70)
 
-}
+}*/
 
 test "La habilidad de Luis Alberto tocando con la fender es 80" {
 	assert.equals(luisAlberto.habilidad(fender), 80)
@@ -63,13 +63,13 @@ test "Luis Alberto interpreta bien la canción La Familia" {
 	assert.that(luisAlberto.interpretaBien(laFamilia))
 }
 
-test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {   //no importa donde actúa, es el precio de la hora
+/*test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {   //no importa donde actúa, es el precio de la hora
 	assert.equals(joaquin.cobra(1, "conLucia"), 50)
 }
 
 test "Joaquín actúa solo en La Trastienda y cobra 100" {             //no importa donde actúa, es el precio de la hora
 	assert.equals(joaquin.cobra(1, "solo"), 100)
-}
+}*/
 
 //test "la capacidad de La Trastienda para el 05/08/2017 es 700" {
 //	assert.equals(laTrastienda.capacidad(05/08/2017), 700)
