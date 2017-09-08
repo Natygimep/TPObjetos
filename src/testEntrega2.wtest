@@ -1,10 +1,15 @@
 import mundoMusical.*
+import Album.*
 describe "tests entrega 2"{
 	const lucia
 	const joaquin
 	const luisAlberto
 fixture {
     lucia = new Musico
+    joaquin = new Musico
+    luisAlberto = new Musico
+    sole = new Musico
+    kike = new Musico
 	
 }
 test "La canción Crisantemo es corta"{

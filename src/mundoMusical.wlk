@@ -162,24 +162,7 @@ object laTrastienda {
 /*const albumParaLosArboles = [cisne,almaDeDiamante]
 	const albumJustCrisantemo = [crisantemo]
 	
-	method albumParaLosArboles() = albumParaLosArboles
 	
-	method albumJustCrisantemo() = albumJustCrisantemo
-	
-	method duracionAlbumParaLosArboles() = self.albumParaLosArboles().sum({cancion => cancion.duracion()})
-		
-	method duracionAlbumJustCrisantemo() = self.albumJustCrisantemo().sum({cancion => cancion.duracion()})
-	
-	method duracionObra() = (self.duracionAlbumParaLosArboles())+(self.duracionAlbumJustCrisantemo())
-	
-	method todasLasCanciones() = albumParaLosArboles + albumJustCrisantemo 
-	
-	method esMinimalista() = self.todasLasCanciones().all({cancion => cancion.duracion() < 180})
-	
-	method cancionMasLargaDeAlbumParaLosArboles() = self.albumParaLosArboles().max({cancion => cancion.longitudDeLetra()}) // si lo se que es feo, pero bueno funciona jeje
-	
-	method cancionMasLargaDeAlbumJustCrisantemo() = self.albumJustCrisantemo().max({cancion => cancion.longitudDeLetra()}) // lo msimo que arriba jaja
-
 object eres{
 	
 	method letra() = "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días"
