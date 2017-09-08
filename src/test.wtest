@@ -95,21 +95,26 @@ test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {   //no i
 	assert.equals(lucia.cobra(laTrastienda), 400)
 }
 
-//test "Luis Alberto cobra 1000 por actuar antes de septiembre 2017 en el Luna Park" {
-	//assert.equals(luisAlberto.cobra(01/08/2017), 1000)
-//}
-
-//test "Luis Alberto cobra 1200 por actuar despues de septiembre 2017 en el La Trastienda" {
-//	assert.equals(luisAlberto.cobra(01/10/2017), 1200)
-//}
-
-test "El costo de la presentación de los tres en el Luna Park es 1550" {
-	joaquin.precio(50)
-	assert.equals(lucia.cobra(lunaPark)+joaquin.cobra(1)+1000, 1550)
+test "Luis Alberto cobra 1000 por actuar antes de septiembre 2017 en el Luna Park" {
+	const unaFecha = new wollok.lang.Date(01,08,2017)
+	assert.equals(luisAlberto.cobra(unaFecha), 1000)
 }
 
-//test "El costo de la presentación de los tres en el La Trastienda el 15/11/2017 es 1650" {
-//	assert.equals(laTrastienda.costoTotal(15/11/2017), 1650)
-//}
+test "Luis Alberto cobra 1200 por actuar despues de septiembre 2017 en el La Trastienda" {
+    const unaFecha = new wollok.lang.Date(01,09,2017)
+	assert.equals(luisAlberto.cobra(unaFecha), 1200)
+}
+
+test "El costo de la presentación de los tres en el Luna Park es 1550" {
+	 const unaFecha = new wollok.lang.Date(01,08,2017)
+	joaquin.precio(50)
+	assert.equals(lucia.cobra(lunaPark)+joaquin.cobra(1)+luisAlberto.cobra(unaFecha), 1550)
+}
+
+test "El costo de la presentación de los tres en el La Trastienda el 15/11/2017 es 1650" {
+	joaquin.precio(50)
+	const unaFecha = new wollok.lang.Date(15,11,2017)
+	assert.equals(lucia.cobra(laTrastienda)+joaquin.cobra(1)+luisAlberto.cobra(unaFecha), 1650)
+}
 }
 

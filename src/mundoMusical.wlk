@@ -83,10 +83,10 @@ object luisAlberto {
 	
 	method interpretaBien(cancion) = return true
 	
-	method cobra(funcion){
-		// if(funcion.fecha() < septiembre 2017){         // despues averiguo bien como manejar fecchas
-		//	return 1000
-		// }else{return 1200}
+	method cobra(fechaFuncion){
+		if(fechaFuncion <  new wollok.lang.Date(01, 09, 2017))
+			return 1000
+		else return 1200
 	}
 	
 }
