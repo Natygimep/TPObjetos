@@ -138,15 +138,23 @@ object lunaPark {
 	
 	method capacidad() = 9290
 	
-}
+	}
+	
+
 
 object laTrastienda {
 	
 	method esConcurrido() = self.capacidad() > 5000
 	
-	method capacidad() = 400 // ´para mi no deberia ir en dos metodos separados, 1 que diga 400 y si es sabado 700, nose como saber si es sabado? 
-
-	method capacidadPrimerPiso() = 300 // únicamente los sabados.
+	method capacidad() =  400
+	
+	/*method capacidad(unaFecha) {
+		
+		//if (Date.dayOfWeek(unaFecha) = 6)
+		    {return 700}
+	  //  else {return 400}  
+	    }*/
+	    
 	
 }
 
