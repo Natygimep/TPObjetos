@@ -2,29 +2,31 @@ import mundoMusical.*
 
 describe "tests respecto de los músicos" {
 
-/*test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
-
-	assert.equals(joaquin.habilidad("conLucia"), 25)
+test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
+	
+    joaquin.aumentarHabilidad(5)
+	assert.equals(joaquin.habilidad(), 25)
 
 }
 
 test "La habilidad de Joaquín cantando solo debe ser 20" {
 
-	assert.equals(joaquin.habilidad("solo"), 20)
+	assert.equals(joaquin.habilidad(), 20)
 
 }
 
 test "La habilidad de Lucía cantando en Pimpinela debe ser 50" {
 
-	assert.equals(lucia.habilidad("conJoaquin"), 50)
+	lucia.disminuirHabilidad(20)
+	assert.equals(lucia.habilidad(), 50)
 
 }
 
 test "La habilidad de Lucía cantando sola debe ser 70" {
 
-	assert.equals(lucia.habilidad("sola"), 70)
+	assert.equals(lucia.habilidad(), 70)
 
-}*/
+}
 
 test "La habilidad de Luis Alberto tocando con la fender es 80" {
 	assert.equals(luisAlberto.habilidad(fender), 80)
@@ -63,21 +65,23 @@ test "Luis Alberto interpreta bien la canción La Familia" {
 	assert.that(luisAlberto.interpretaBien(laFamilia))
 }
 
-/*test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {   //no importa donde actúa, es el precio de la hora
-	assert.equals(joaquin.cobra(1, "conLucia"), 50)
+test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {   //no importa donde actúa, es el precio de la hora
+	
+	joaquin.precio(50)
+	assert.equals(joaquin.cobra(1), 50)
 }
 
 test "Joaquín actúa solo en La Trastienda y cobra 100" {             //no importa donde actúa, es el precio de la hora
-	assert.equals(joaquin.cobra(1, "solo"), 100)
-}*/
+	assert.equals(joaquin.cobra(1), 100)
+}
 
-//test "la capacidad de La Trastienda para el 05/08/2017 es 700" {
-//	assert.equals(laTrastienda.capacidad(05/08/2017), 700)
-//}
+/*test "la capacidad de La Trastienda para el 05/08/2017 es 700" {
+	assert.equals(laTrastienda.capacidad(05/08/2017), 700)
+}
 
 //test "la capacidad de La Trastienda para el 08/08/2017 es 400" {
 //	assert.equals(laTrastienda.capacidad(08/08/2017), 400)
-//}
+//}*/
 
 test "Lucía cobra 500 por actuar ¿con Pimpinela? en el Luna Park" {      //no importa si canta sola o no
 	assert.equals(lucia.cobra(lunaPark), 500)
@@ -91,7 +95,7 @@ test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {   //no i
 	//assert.equals(luisAlberto.cobra(01/08/2017), 1000)
 //}
 
-//test "Luis Alberto cobra 1200 por actuar despes de septiembre 2017 en el La Trastienda" {
+//test "Luis Alberto cobra 1200 por actuar despues de septiembre 2017 en el La Trastienda" {
 //	assert.equals(luisAlberto.cobra(01/10/2017), 1200)
 //}
 
