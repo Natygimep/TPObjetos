@@ -148,12 +148,12 @@ object laTrastienda {
 	
 	method capacidad() =  400
 	
-	/*method capacidad(unaFecha) {
+	method capacidad(unaFecha) {
 		
-		//if (Date.dayOfWeek(unaFecha) = 6)
-		    {return 700}
-	  //  else {return 400}  
-	    }*/
+		if (unaFecha.dayOfWeek() == 6)
+		    return 700
+	    else return 400  
+	    }
 	    
 	
 }
