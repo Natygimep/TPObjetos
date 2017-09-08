@@ -1,4 +1,4 @@
-class MusicoDeGrupo {
+class Musico {
 	
 	var habilidad = 20
 	var precio = 100
@@ -67,11 +67,11 @@ class MusicoSolista {
 	
 }
 
-object joaquin inherits MusicoDeGrupo{
+object joaquin inherits Musico{
 	
 }
 
-object lucia inherits MusicoSolista{}
+object lucia inherits Musico{}
 
 object luisAlberto {
 	

@@ -1,0 +1,58 @@
+import mundoMusical.*
+describe "tests entrega 2"{
+	const lucia
+	const joaquin
+	const luisAlberto
+fixture {
+    lucia = new Musico
+	
+}
+test "La canción Crisantemo es corta"{
+	
+}
+test "La canción Alma de diamante es corta"{
+	
+}
+test "Soledad es minimalista"{
+	
+}
+test "Luis Alberto es minimalista"{
+	
+}
+test "Joaquín es minimalista"{
+	
+}
+test "Qué canciones de Luis Alberto tienen la palabra cielo"{
+	
+}
+test "Qué canciones de Luis Alberto tienen la palabra pujante"{
+	
+}
+test "Cuántos segundos dura la obra de Quique"{
+	
+}
+test "Cuántos segundos dura la obra de Soledad"{
+	
+}
+test "Cuántos segundos dura la obra de Luis Alberto"{
+	
+}
+test "Qué canción es la mas larga del álbum Para los árboles"{
+	
+}
+test"Qué canción es la mas larga del álbum La Sole"{
+	
+}
+test "Qué canción es la mas larga del álbum Especial la familia"{
+	
+}
+test "Luis Alberto la pegó"{
+	
+}
+test "Sole la pegó"{
+	
+}
+test "Joaquín la pegó"{
+	
+}
+}
