@@ -159,7 +159,88 @@ object laTrastienda {
 }
 
 
+/*const albumParaLosArboles = [cisne,almaDeDiamante]
+	const albumJustCrisantemo = [crisantemo]
+	
+	method albumParaLosArboles() = albumParaLosArboles
+	
+	method albumJustCrisantemo() = albumJustCrisantemo
+	
+	method duracionAlbumParaLosArboles() = self.albumParaLosArboles().sum({cancion => cancion.duracion()})
+		
+	method duracionAlbumJustCrisantemo() = self.albumJustCrisantemo().sum({cancion => cancion.duracion()})
+	
+	method duracionObra() = (self.duracionAlbumParaLosArboles())+(self.duracionAlbumJustCrisantemo())
+	
+	method todasLasCanciones() = albumParaLosArboles + albumJustCrisantemo 
+	
+	method esMinimalista() = self.todasLasCanciones().all({cancion => cancion.duracion() < 180})
+	
+	method cancionMasLargaDeAlbumParaLosArboles() = self.albumParaLosArboles().max({cancion => cancion.longitudDeLetra()}) // si lo se que es feo, pero bueno funciona jeje
+	
+	method cancionMasLargaDeAlbumJustCrisantemo() = self.albumJustCrisantemo().max({cancion => cancion.longitudDeLetra()}) // lo msimo que arriba jaja
 
+object eres{
+	
+	method letra() = "Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días"
+	
+	method duracion() = 145
+	
+	method longitudDeLetra() = self.letra().size()
+}
+
+object corazonAmericano{
+	
+	method letra() = "Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos"
+	
+	method duracion() = 154
+	
+	method longitudDeLetra() = self.letra().size()
+}
+
+object almaDeDiamante{
+	
+	method letra() = "Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante"
+	
+	method duracion() = 216
+	
+	method longitudDeLetra() = self.letra().size()
+}
+
+object crisantemo{
+	
+	method letra() = "Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo"
+	
+	method duracion() = 175
+	
+	method longitudDeLetra() = self.letra().size()
+}
+
+
+object kike{
+	
+	var habilidad = 70
+	
+	method habilidad() = habilidad
+	
+	method nuevaHabilidad(nuevaHabilidad){
+		habilidad = nuevaHabilidad
+	}
+}
+
+object soledad{
+	
+	var habilidad = 55
+	
+	method habilidad() = habilidad
+	
+	method nuevaHabilidad(nuevaHabilidad){
+		habilidad = nuevaHabilidad
+	}
+}
+
+ * 
+ */
 
 
 

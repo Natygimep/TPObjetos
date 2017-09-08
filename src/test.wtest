@@ -111,3 +111,4 @@ test "El costo de la presentación de los tres en el Luna Park es 1550" {
 //	assert.equals(laTrastienda.costoTotal(15/11/2017), 1650)
 //}
 }
+
