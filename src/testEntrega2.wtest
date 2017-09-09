@@ -4,13 +4,15 @@ describe "tests entrega 2"{
 	const lucia
 	const joaquin
 	const luisAlberto
+	const sole
+	const kike
 fixture {
-    lucia = new Musico
-    joaquin = new Musico
-    luisAlberto = new Musico
-    sole = new Musico
-    kike = new Musico
-	
+    lucia = new Musico(70, 500)
+    joaquin = new Musico(20, 100)
+    luisAlberto = new Musico()
+    sole = new Musico(55)
+    kike = new Musico(60)
+	//method apareceEn(palabra) = self.todasLasCanciones().filter({cancion => cancion.letra().contains(palabra)}) // Este método tiene problemas con las letras Mayúsculas y minúsculas 
 }
 test "La canción Crisantemo es corta"{
 	
@@ -61,3 +63,4 @@ test "Joaquín la pegó"{
 	
 }
 }
+

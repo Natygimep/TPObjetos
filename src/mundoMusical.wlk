@@ -1,7 +1,17 @@
 class Musico {
+	var habilidad
+	var precio 
 	
-	var habilidad = 20
-	var precio = 100
+	constructor() {
+		
+	}
+	constructor(unaHabilidad){
+		self.habilidad(unaHabilidad)
+	}
+	constructor(unaHabilidad, unPrecio){
+		self.habilidad(unaHabilidad)
+		self.precio(unPrecio)
+	}
 	
 	method precio() = precio
 	
@@ -24,32 +34,7 @@ class Musico {
 	method cobra(horas) {
 		return precio*horas
 	}
-	
-	method tocaEnGrupo(aumentoHabilidad) {
-		self.aumentarHabilidad(aumentoHabilidad)
-		self.precio(50)
-	}
-	
-}
-
-class MusicoSolista { 
-	
-	var habilidad = 70
-	const palabra = "familia"
-	
-	method disminuirHabilidad(cuantoDisminuye) {
-		self.aumentarHabilidad(cuantoDisminuye*-1)
-	}
-	
-	method habilidad() = habilidad 
-	
-	method habilidad(nuevaHabilidad) {
-		habilidad = nuevaHabilidad
-	}
-	
-	method aumentarHabilidad(cuantoAumenta) {
-		self.habilidad(self.habilidad()+cuantoAumenta)
-	}
+	const palabra
 	
 	method interpretaBien(cancion) = (cancion.letra().contains(palabra))
 	
@@ -61,35 +46,20 @@ class MusicoSolista {
 		}
 	}
 	
-	method tocaEnGrupo() {
-		self.disminuirHabilidad(20)
-	}
-	
 }
 
-object joaquin inherits Musico{
+class HabilidadDeMusico {
 	
+	method 
 }
 
-object lucia inherits Musico{}
 
-object luisAlberto {
 	
- 	
 	
-//	method apareceEn(palabra) = self.todasLasCanciones().filter({cancion => cancion.letra().contains(palabra)}) // Este método tiene problemas con las letras Mayúsculas y minúsculas 
 	
-	method habilidad(guitarra) = [100,guitarra.valor() * 8].min()   // minimo entre 100 y el valor x 8 ya que el tope es 100
-	
-	method interpretaBien(cancion) = return true
-	
-	method cobra(fechaFuncion){
-		if(fechaFuncion <  new wollok.lang.Date(01, 09, 2017))
-			return 1000
-		else return 1200
-	}
-	
-}
+
+
+ 
 
 
 object fender{

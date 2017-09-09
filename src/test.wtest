@@ -2,6 +2,34 @@ import mundoMusical.*
 
 describe "tests respecto de los músicos" {
 
+    const lucia
+	const joaquin
+	const luisAlberto
+fixture {
+    lucia = new Musico(70, 500)
+    joaquin = new Musico(20, 100)
+    luisAlberto = new Musico()
+	
+ 	
+	
+/* 	
+	
+	method habilidad(guitarra) = [100,guitarra.valor() * 8].min()   // minimo entre 100 y el valor x 8 ya que el tope es 100
+	
+	method interpretaBien(cancion) = return true
+	
+	method cobra(fechaFuncion){
+		if(fechaFuncion <  new wollok.lang.Date(01, 09, 2017))
+			return 1000
+		else return 1200
+	}
+	
+}*/
+	
+}
+test "La canción Crisantemo es corta"{
+	
+}
 test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
 	
     joaquin.aumentarHabilidad(5)
@@ -17,7 +45,7 @@ test "La habilidad de Joaquín cantando solo debe ser 20" {
 
 test "La habilidad de Lucía cantando en Pimpinela debe ser 50" {
 
-	lucia.disminuirHabilidad(20)
+	lucia.aumentarHabilidad(-20)
 	assert.equals(lucia.habilidad(), 50)
 
 }
