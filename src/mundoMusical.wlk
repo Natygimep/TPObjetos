@@ -1,5 +1,6 @@
 class Musico {
 	var habilidad
+	var aumentoDeHabilidad
 	var precio 
 	
 	constructor() {
@@ -7,6 +8,11 @@ class Musico {
 	}
 	constructor(unaHabilidad){
 		self.habilidad(unaHabilidad)
+	}
+	constructor(unaHabilidad, unAumentoDeHabilidad, unPrecio){
+		self.habilidad(unaHabilidad)
+		self.aumentaHabilidad(unAumentoDeHabilidad)
+		self.precio(unPrecio)
 	}
 	constructor(unaHabilidad, unPrecio){
 		self.habilidad(unaHabilidad)
@@ -25,8 +31,8 @@ class Musico {
 		habilidad = nuevaHabilidad
 	}
 	
-	method aumentarHabilidad(cuantoAumenta) {
-		self.habilidad(self.habilidad()+cuantoAumenta)
+	method aumentaHabilidad(unAumentoDeHabilidad) {
+		self.habilidad(self.habilidad()+unAumentoDeHabilidad)
 	}
 	
 	method interpretaBien(cancion) = (cancion.duracion() > 300)
@@ -46,37 +52,6 @@ class Musico {
 		}
 	}
 	
-}
-
-class HabilidadDeMusico {
-	
-	method 
-}
-
-
-	
-	
-	
-
-
- 
-
-
-object fender{
-
-	method valor() = 10				
-}
-object gibson{
-	 var valor = 15
-	 
-	 method valor() = valor
-	 method valor(nuevoValor) {
-	 	valor = nuevoValor
-	 }      
-	
-	method maltrataGibson() {
-		self.valor(5)
-	}
 }
 
 // Canciones

@@ -1,5 +1,7 @@
 import mundoMusical.*
 import Album.*
+import guitarra.*
+
 describe "tests entrega 2"{
 	const lucia
 	const joaquin
