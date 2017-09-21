@@ -1,5 +1,7 @@
 import mundoMusical.*
 import guitarra.*
+import interpretaBien.*
+import Cobra.*
 
 describe "tests respecto de los músicos" {
 
@@ -8,6 +10,8 @@ describe "tests respecto de los músicos" {
 	const luisAlberto
 	const fender
 	const gibson
+	const cisne
+	const laFamilia
 	
 fixture {
     lucia = new Musico(70, -20, 500)
@@ -15,6 +19,9 @@ fixture {
     luisAlberto = new Musico()
 	fender = new Guitarra(10)
 	gibson = new Guitarra(15)
+	cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,self.letra().size())
+    laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, self.letra().size())
+    
  	
 	/*method interpretaBien(cancion) = return true
 	

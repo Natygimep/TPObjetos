@@ -1,6 +1,8 @@
 import mundoMusical.*
 import Album.*
 import guitarra.*
+import interpretaBien.*
+import Cobra.*
 
 describe "tests entrega 2"{
 	const lucia
@@ -8,13 +10,27 @@ describe "tests entrega 2"{
 	const luisAlberto
 	const sole
 	const kike
+	const cisne
+	const laFamilia
+	const eres
+	const corazonAmericano
+	const almaDeDiamante
+	const crisantemo
+	
+	}
 fixture {
     lucia = new Musico(70, 500)
     joaquin = new Musico(20, 100)
     luisAlberto = new Musico()
     sole = new Musico(55)
     kike = new Musico(60)
-	//method apareceEn(palabra) = self.todasLasCanciones().filter({cancion => cancion.letra().contains(palabra)}) // Este método tiene problemas con las letras Mayúsculas y minúsculas 
+    cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,self.letra().size())
+    laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, self.letra().size())
+    eres = new Cancion("Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días", 145, self.letra().size())
+    corazonAmericano = new Cancion("Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos", 154, self.letra().size())
+    almaDeDiamante = new Cancion("Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante", 216, self.letra().size())
+    crisantemo = new Cancion("Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo", 175, self.letra().size())
+    	 
 }
 test "La canción Crisantemo es corta"{
 	
