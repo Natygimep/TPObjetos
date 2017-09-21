@@ -1,7 +1,8 @@
 class Musico {
 	var habilidad
-	var aumentoDeHabilidad
 	var precio 
+	const palabra
+	
 	
 	constructor() {
 		
@@ -9,13 +10,10 @@ class Musico {
 	constructor(unaHabilidad){
 		self.habilidad(unaHabilidad)
 	}
-	constructor(unaHabilidad, unAumentoDeHabilidad, unPrecio){
-		self.habilidad(unaHabilidad)
-		self.aumentaHabilidad(unAumentoDeHabilidad)
+	constructor(unaHabilidad, unPrecio) = self(unaHabilidad){
 		self.precio(unPrecio)
 	}
-	constructor(unaHabilidad, unPrecio){
-		self.habilidad(unaHabilidad)
+	constructor(unaHabilidad, unAumentoDeHabilidad, unPrecio) = self(unaHabilidad,unAumentoDeHabilidad){
 		self.precio(unPrecio)
 	}
 	
@@ -34,25 +32,7 @@ class Musico {
 	method aumentaHabilidad(unAumentoDeHabilidad) {
 		self.habilidad(self.habilidad()+unAumentoDeHabilidad)
 	}
-	
-	method interpretaBien(cancion) = (cancion.duracion() > 300)
-	
-	method cobra(horas) {
-		return precio*horas
-	}
-	const palabra
-	
-	method interpretaBien(cancion) = (cancion.letra().contains(palabra))
-	
-	method cobra(lugar) {
-		if (lugar.esConcurrido()) {
-			return 500
-		}else{
-			return 400
-		}
-	}
-	
-}
+
 
 // Canciones
 
