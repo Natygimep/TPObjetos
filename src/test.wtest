@@ -2,6 +2,7 @@ import mundoMusical.*
 import guitarra.*
 import interpretaBien.*
 import Cobra.*
+import canciones.*
 
 describe "tests respecto de los músicos" {
 

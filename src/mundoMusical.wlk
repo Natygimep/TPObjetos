@@ -1,12 +1,9 @@
 class Musico {
 	var habilidad
 	var precio 
-	const palabra
 	
 	
-	constructor() {
-		
-	}
+	constructor() {}
 	constructor(unaHabilidad){
 		self.habilidad(unaHabilidad)
 	}
@@ -33,7 +30,7 @@ class Musico {
 		self.habilidad(self.habilidad()+unAumentoDeHabilidad)
 	}
 
-
+}
 // Canciones
 
 
