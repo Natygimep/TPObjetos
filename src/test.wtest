@@ -10,6 +10,7 @@ describe "tests respecto de los músicos" {
 	const gibson
 	const cisne
 	const laFamilia
+	const lunaPark
 	
 fixture {
     lucia = new MusicoSolista(70, "amor")
@@ -18,7 +19,7 @@ fixture {
 	gibson = new Guitarra(15)
 	cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,"cisne")
     laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "laFamilia")
-	
+	lunaPark = new Lugar(9290)
 }
 
 test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
@@ -46,22 +47,22 @@ test "La habilidad de Lucía cantando sola debe ser 70" {
 	assert.equals(lucia.habilidad(), 70)
 
 }
-/* 
+
 test "La habilidad de Luis Alberto tocando con la fender es 80" {
-	luisAlberto.habilidad(fender) = [100,fender.valor() * 8].min()
-	assert.equals(luisAlberto.habilidad(fender), 80)
+	luisAlberto.guitarra(fender)
+	assert.equals(luisAlberto.habilidad(), 80)
 }
 
-test "La habilidad de Luis Alberto tocando con la gibson sana es 80" {
-	luisAlberto.habilidad(gibson) = [100,gibson.valor() * 8].min()
-	assert.equals(luisAlberto.habilidad(gibson), 100)
+test "La habilidad de Luis Alberto tocando con la gibson sana es 100" {
+	luisAlberto.guitarra(gibson)
+	assert.equals(luisAlberto.habilidad(), 100)
 }
 
 test "La habilidad de Luis Alberto tocando con la gibson maltratada es 40" {
 	gibson.valor(5)
-	luisAlberto.habilidad(gibson) = [100,gibson.valor() * 8].min()
-	assert.equals(luisAlberto.habilidad(gibson), 40)
-}*/
+	luisAlberto.guitarra(gibson)
+	assert.equals(luisAlberto.habilidad(), 40)
+}
 
 test "Joaquín interpreta mal la canción La Familia" {
 	assert.notThat(joaquin.interpretaBien(laFamilia))

@@ -85,6 +85,12 @@ class MusicoSolista inherits Musico{
 }
 
 object luisAlberto inherits Musico{
+	var guitarra
+	
+	method guitarra() = guitarra
+	method guitarra(unaGuitarra){
+		guitarra=unaGuitarra
+	}
 	method interpretaBien(cancion) = true
 	
 	method cobra(fecha){
@@ -96,45 +102,29 @@ object luisAlberto inherits Musico{
 			return 1000
 		}
 	}
+	
+	override method habilidad(){
+		return [8*self.guitarra().valor(),100].min()
+	}
 }
-// Canciones
+
 
 
 // Lugares donde tocan los músicos 
 
 class Lugar {
-	var capacidad
+	const capacidad
 	
 	constructor (unaCapacidad) {
-		self.capacidad(unaCapacidad)
-	}
-	
-	method capacidad() = return capacidad
-	method capacidad(unaCapacidad){
 		capacidad = unaCapacidad
 	}
 	
+	method capacidad() = return capacidad
 	method esConcurrido() = self.capacidad() > 5000
 }
 
-object lunaPark {
-	
-	method esConcurrido() = self.capacidad() > 5000 // cuando creemos las clases este methodo va a provenir de ahi
-	
-	method capacidad() = 9290
-	
-	}
-	
-
-
-object laTrastienda {
-	
-	method esConcurrido() = self.capacidad() > 5000
-	
-	method capacidad() =  400
-	
+object laTrastienda inherits Lugar(400){
 	method capacidad(unaFecha) {
-		
 		if (unaFecha.dayOfWeek() == 6)
 		{
 		    return 700
