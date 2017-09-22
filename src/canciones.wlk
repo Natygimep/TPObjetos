@@ -22,4 +22,7 @@ method titulo() = titulo
 method titulo(unTitulo){
 	titulo = unTitulo
 }
+method esCorta(unaCancion){
+	return unaCancion.duracion() < 180
+}
 }
