@@ -1,6 +1,8 @@
 class Musico {
 	var habilidad
-	
+	var esSolista = true
+		
+	constructor(){}
 	constructor(unaHabilidad){
 		self.habilidad(unaHabilidad)
 	}
@@ -13,15 +15,27 @@ class Musico {
 	method aumentarHabilidad(nuevaHabilidad){
 		self.habilidad(self.habilidad()+nuevaHabilidad)
 	}
+	method disminuirHabilidad(nuevaHabilidad){
+		self.aumentarHabilidad(-nuevaHabilidad)
+	}
+	method esSolista() = return esSolista
+	method esSolista(unBooleano) {
+		esSolista = unBooleano
+	}
+	method tocaEnGrupo(){
+		self.esSolista(false)
+	}
 }
 
 class MusicoDeGrupo inherits Musico {
+	const aumentoDeHabilidad
 	
 	constructor(unaHabilidad, unAumentoDeHabilidad) = self(unaHabilidad){
-		self.aumentarHabilidad(unAumentoDeHabilidad)
+		aumentoDeHabilidad = unAumentoDeHabilidad
 	}
-	method esSolista() = return false
 	
+	method aumentoDeHabilidad() = aumentoDeHabilidad
+		
 	method cobra(_) {
 		if (self.esSolista()) 
 		{ 
@@ -31,6 +45,13 @@ class MusicoDeGrupo inherits Musico {
 		{
 			return 50
 		}
+	}
+	
+	method interpretaBien(cancion) = (cancion.duracion() > 300)
+	
+	override method tocaEnGrupo(){
+		self.esSolista(false)  // si alguno se acuerda como heredar comportamiento del metodo de clase musico para evitar repetir esto
+		self.aumentarHabilidad(self.aumentoDeHabilidad())
 	}
 
 }
@@ -47,8 +68,6 @@ class MusicoSolista inherits Musico{
 	}
 	method palabra() = palabra
 	
-	method esSolista() = return true
-	
 	method cobra(lugar) {
 		if (lugar.esConcurrido()) {
 			return 500
@@ -56,11 +75,47 @@ class MusicoSolista inherits Musico{
 			return 400
 	}
 	
+	method interpretaBien(cancion) = (cancion.letra().contains(self.palabra()))
+	
+	override method tocaEnGrupo(){
+		self.esSolista(false) // si alguno se acuerda como heredar comportamiento del metodo de clase musico para evitar repetir esto
+		self.disminuirHabilidad(20)
+	}
+	
+}
+
+object luisAlberto inherits Musico{
+	method interpretaBien(cancion) = true
+	
+	method cobra(fecha){
+	const fechaTope = new Date(1,9,2017)
+		if (fecha>=fechaTope)
+		{
+			return 1200
+		}else{
+			return 1000
+		}
+	}
 }
 // Canciones
 
 
 // Lugares donde tocan los músicos 
+
+class Lugar {
+	var capacidad
+	
+	constructor (unaCapacidad) {
+		self.capacidad(unaCapacidad)
+	}
+	
+	method capacidad() = return capacidad
+	method capacidad(unaCapacidad){
+		capacidad = unaCapacidad
+	}
+	
+	method esConcurrido() = self.capacidad() > 5000
+}
 
 object lunaPark {
 	
@@ -81,11 +136,15 @@ object laTrastienda {
 	method capacidad(unaFecha) {
 		
 		if (unaFecha.dayOfWeek() == 6)
+		{
 		    return 700
-	    else return 400  
+		}
+	    else 
+	    {
+	    	return 400  
 	    }
 	    
-	
+	    }
 }
 
 
@@ -98,5 +157,4 @@ object laTrastienda {
 
 
 
- * 
  */

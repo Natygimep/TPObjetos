@@ -1,10 +1,6 @@
-
 class Guitarra {
-
     var valor
-    constructor() {
-    	
-    }
+
     constructor(unValor){
     	self.valor(unValor)
     }
@@ -12,6 +8,5 @@ class Guitarra {
 	 method valor(nuevoValor) {
 	 	valor = nuevoValor
 	 }      
-
 
 }

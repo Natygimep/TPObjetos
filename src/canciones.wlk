@@ -3,12 +3,12 @@ class Cancion {
 
 var letra
 var duracion
-var album
+var titulo
 
-constructor(unaLetra, unaDuracion, unAlbum){
+constructor(unaLetra, unaDuracion, unTitulo){
 	self.letra(unaLetra)
 	self.duracion(unaDuracion)
-	self.album(unAlbum)
+	self.titulo(unTitulo)
 }
 method letra() = letra
 method letra(unaLetra) {
@@ -18,8 +18,8 @@ method duracion() = duracion
 method duracion(unaDuracion){
 	duracion = unaDuracion
 }
-method album() = album
-method album(unAlbum){
-	album = unAlbum
+method titulo() = titulo
+method titulo(unTitulo){
+	titulo = unTitulo
 }
 }

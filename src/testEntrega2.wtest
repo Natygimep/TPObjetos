@@ -1,13 +1,11 @@
 import mundoMusical.*
 import Album.*
 import guitarra.*
-import interpretaBien.*
-import Cobra.*
+import canciones.*
 
 describe "tests entrega 2"{
 	const lucia
 	const joaquin
-	const luisAlberto
 	const sole
 	const kike
 	const cisne
@@ -17,10 +15,10 @@ describe "tests entrega 2"{
 	const almaDeDiamante
 	const crisantemo
 	
-	}
+	
 fixture {
-    lucia = new Musico(70, 500)
-    joaquin = new Musico(20, 100)
+    lucia = new MusicoSolista(70,-20)
+    joaquin = new MusicoDeGrupo(20,5)
     luisAlberto = new Musico()
     sole = new Musico(55)
     kike = new Musico(60)
@@ -33,52 +31,52 @@ fixture {
     	 
 }
 test "La canción Crisantemo es corta"{
-	
+	assert.equals(false)
 }
 test "La canción Alma de diamante es corta"{
-	
+	assert.equals(false)
 }
 test "Soledad es minimalista"{
-	
+	assert.equals(false)
 }
 test "Luis Alberto es minimalista"{
-	
+	assert.equals(false)
 }
 test "Joaquín es minimalista"{
-	
+	assert.equals(false)
 }
 test "Qué canciones de Luis Alberto tienen la palabra cielo"{
-	
+	assert.equals(false)
 }
 test "Qué canciones de Luis Alberto tienen la palabra pujante"{
-	
+	assert.equals(false)
 }
 test "Cuántos segundos dura la obra de Quique"{
-	
+	assert.equals(false)
 }
 test "Cuántos segundos dura la obra de Soledad"{
-	
+	assert.equals(false)
 }
 test "Cuántos segundos dura la obra de Luis Alberto"{
-	
+	assert.equals(false)
 }
 test "Qué canción es la mas larga del álbum Para los árboles"{
-	
+	assert.equals(false)
 }
 test"Qué canción es la mas larga del álbum La Sole"{
-	
+	assert.equals(false)
 }
 test "Qué canción es la mas larga del álbum Especial la familia"{
-	
+	assert.equals(false)
 }
 test "Luis Alberto la pegó"{
-	
+	assert.equals(false)
 }
 test "Sole la pegó"{
-	
+	assert.equals(false)
 }
 test "Joaquín la pegó"{
-	
+	assert.equals(false)
 }
 }
 
