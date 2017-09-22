@@ -25,6 +25,8 @@ class Musico {
 	method tocaEnGrupo(){
 		self.esSolista(false)
 	}
+	
+	
 }
 
 class MusicoDeGrupo inherits Musico {

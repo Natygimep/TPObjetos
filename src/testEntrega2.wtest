@@ -14,7 +14,10 @@ describe "tests entrega 2"{
 	const corazonAmericano
 	const almaDeDiamante
 	const crisantemo
-	
+	const albumJoaquin
+	const albumSole
+	const albumLuisAlberto1
+	const albumLuisAlberto2
 	
 fixture {
     lucia = new MusicoSolista(70,-20)
@@ -28,7 +31,10 @@ fixture {
     corazonAmericano = new Cancion("Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos", 154, "Corazon americano")
     almaDeDiamante = new Cancion("Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante", 216, "Alma de Diamante")
     crisantemo = new Cancion("Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo", 175, "Crisantemo")
-    	 
+    albumJoaquin = new Album("Especial la familia", kike, [laFamilia], 100000, 89000, 17/06/1992)
+    albumSole = new Album("La Sole", sole, [eres, corazonAmericano], 200000, 130000, 04/02/2005)
+    albumLuisAlberto1 = new Album("Para los arboles", luisAlberto, [cisne, almaDeDiamante], 50000, 49000, 31/03/2003)
+    albumLuisAlberto2 = new Album("Just crisantemo", luisAlberto, [crisantemo], 28000, 27500, 05/12/2007)
 }
 test "La canción Crisantemo es corta"{
 	assert.that(crisantemo.esCorta(crisantemo))
