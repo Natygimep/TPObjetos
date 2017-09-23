@@ -1,4 +1,5 @@
-
+import Album.*
+import mundoMusical.*
 class Cancion {
 
 var letra
@@ -25,4 +26,5 @@ method titulo(unTitulo){
 method esCorta(unaCancion){
 	return unaCancion.duracion() < 180
 }
+
 }
