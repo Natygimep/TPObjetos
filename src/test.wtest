@@ -6,19 +6,27 @@ describe "tests respecto de los músicos" {
 
     const lucia
 	const joaquin
+	const luisAlberto
 	const fender
 	const gibson
 	const cisne
 	const laFamilia
 	const lunaPark
+	const musicoSolista
+	const musicoDeGrupo
+	const musicoReCapo
 	
 fixture {
-    lucia = new MusicoSolista(70, "amor")
-    joaquin = new MusicoDeGrupo(20, 5)
+	musicoSolista = new TipoMusicoSolista("amor")
+    musicoDeGrupo = new TipoMusicoDeGrupo(5)
+    musicoReCapo = new TipoMusicoReCapo(fender)
+    lucia = new Musico(70, musicoSolista)
+    joaquin = new Musico(20, musicoDeGrupo)
+    luisAlberto = new Musico(0, musicoReCapo)
 	fender = new Guitarra(10)
 	gibson = new Guitarra(15)
-	cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,"cisne")
-    laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "laFamilia")
+	cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,"cisne", joaquin)
+    laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "laFamilia", joaquin)
 	lunaPark = new Lugar(9290)
 }
 

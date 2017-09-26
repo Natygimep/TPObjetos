@@ -6,7 +6,10 @@ import canciones.*
 describe "tests entrega 2"{
 	const lucia
 	const joaquin
-	const sole
+	const luisAlberto
+	const fender
+	const gibson
+	const soledad
 	const kike
 	const cisne
 	const laFamilia
@@ -15,24 +18,27 @@ describe "tests entrega 2"{
 	const almaDeDiamante
 	const crisantemo
 	const albumJoaquin
-	const albumSole
+	const albumSoledad
 	const albumLuisAlberto1
 	const albumLuisAlberto2
 	
 fixture {
-    lucia = new MusicoSolista(70,-20)
-    joaquin = new MusicoDeGrupo(20,5)
-    luisAlberto = new Musico()
-    sole = new Musico(55)
-    kike = new Musico(60)
-    cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312, "Cisne")
-    laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "La familia")
-    eres = new Cancion("Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días", 145, "Eres")
-    corazonAmericano = new Cancion("Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos", 154, "Corazon americano")
-    almaDeDiamante = new Cancion("Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante", 216, "Alma de Diamante")
-    crisantemo = new Cancion("Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo", 175, "Crisantemo")
+	
+    lucia = new Musico(70, new TipoMusicoSolista("familia"))
+    joaquin = new Musico(20, new TipoMusicoDeGrupo(5))
+    luisAlberto = new Musico(0, new TipoMusicoReCapo(fender))
+	fender = new Guitarra(10)
+	gibson = new Guitarra(15)
+    soledad = new Musico(55, new TipoMusicoSolista("amor"))
+    kike = new Musico(60, new TipoMusicoDeGrupo(20))
+    cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312, "Cisne", luisAlberto)
+    laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "La familia", joaquin)
+    eres = new Cancion("Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días", 145, "Eres", soledad)
+    corazonAmericano = new Cancion("Canta corazón, canta más alto, que tu pena al fin se va marchando, el nuevo milenio ha de encontrarnos, junto corazón, como soñamos", 154, "Corazon americano", soledad)
+    almaDeDiamante = new Cancion("Ven a mí con tu dulce luz alma de diamante. Y aunque el sol se nuble después sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante. Por eso ven así con la humanidad alma de diamante", 216, "Alma de Diamante", luisAlberto)
+    crisantemo = new Cancion("Tócame junto a esta pared, yo quede por aquí... cuando no hubo más luz... quiero mirar a través de mi piel... Crisantemo, que se abrió... encuentra el camino hacia el cielo", 175, "Crisantemo", luisAlberto)
     albumJoaquin = new Album("Especial la familia", kike, [laFamilia], 100000, 89000, 17/06/1992)
-    albumSole = new Album("La Sole", sole, [eres, corazonAmericano], 200000, 130000, 04/02/2005)
+    albumSoledad = new Album("La Sole", soledad, [eres, corazonAmericano], 200000, 130000, 04/02/2005)
     albumLuisAlberto1 = new Album("Para los arboles", luisAlberto, [cisne, almaDeDiamante], 50000, 49000, 31/03/2003)
     albumLuisAlberto2 = new Album("Just crisantemo", luisAlberto, [crisantemo], 28000, 27500, 05/12/2007)
 }
