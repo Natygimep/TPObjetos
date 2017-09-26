@@ -1,10 +1,16 @@
 class Musico {
 	var habilidad
 	var esSolista = true
+	var tipoDeMusico
 		
 	constructor(){}
 	constructor(unaHabilidad){
 		self.habilidad(unaHabilidad)
+	}
+	
+	method tipoDeMusico() = tipoDeMusico
+	method tipoDeMusico(unTipo){
+		tipoDeMusico = unTipo
 	}
 	
 	method habilidad() = habilidad
@@ -25,45 +31,38 @@ class Musico {
 	method tocaEnGrupo(){
 		self.esSolista(false)
 	}
+	method cobra() = tipoDeMusico.cobra()
+	method interpretaBien(cancion) = tipoDeMusico.interpretaBien(cancion)
 	
 	/*method esMinimalista(unArtista){
 		unArtista.
 	}*/
 }
 
-class MusicoDeGrupo inherits Musico {
+class MusicoDeGrupo{
 	const aumentoDeHabilidad
 	
-	constructor(unaHabilidad, unAumentoDeHabilidad) = self(unaHabilidad){
+	constructor(unAumentoDeHabilidad){
 		aumentoDeHabilidad = unAumentoDeHabilidad
 	}
 	
 	method aumentoDeHabilidad() = aumentoDeHabilidad
 		
-	method cobra(_) {
-		if (self.esSolista()) 
-		{ 
-			return 100
-		}
-		else
-		{
-			return 50
-		}
-	}
+	method cobra(musico) = if (musico.esSolista()) 100 else 50	
 	
 	method interpretaBien(cancion) = (cancion.duracion() > 300)
 	
-	override method tocaEnGrupo(){
-		self.esSolista(false)  // si alguno se acuerda como heredar comportamiento del metodo de clase musico para evitar repetir esto
-		self.aumentarHabilidad(self.aumentoDeHabilidad())
+	method tocaEnGrupo(musico){
+		musico.esSolista(false)  // si alguno se acuerda como heredar comportamiento del metodo de clase musico para evitar repetir esto
+		musico.aumentarHabilidad(self.aumentoDeHabilidad())
 	}
 
 }
 
-class MusicoSolista inherits Musico{
+class MusicoSolista{
 	var palabra
 	
-	constructor(unaHabilidad, unaPalabra) = self(unaHabilidad){
+	constructor(unaPalabra) {
 		self.palabra(unaPalabra)
 	}
 	
@@ -72,18 +71,13 @@ class MusicoSolista inherits Musico{
 	}
 	method palabra() = palabra
 	
-	method cobra(lugar) {
-		if (lugar.esConcurrido()) {
-			return 500
-		}else
-			return 400
-	}
+	method cobra(lugar) = if (lugar.esConcurrido()) 500 else 400
 	
 	method interpretaBien(cancion) = (cancion.letra().contains(self.palabra()))
 	
-	override method tocaEnGrupo(){
-		self.esSolista(false) // si alguno se acuerda como heredar comportamiento del metodo de clase musico para evitar repetir esto
-		self.disminuirHabilidad(20)
+	method tocaEnGrupo(musico){
+		musico.esSolista(false) // si alguno se acuerda como heredar comportamiento del metodo de clase musico para evitar repetir esto
+		musico.disminuirHabilidad(20)
 	}
 	
 }
@@ -97,19 +91,10 @@ object luisAlberto inherits Musico{
 	}
 	method interpretaBien(cancion) = true
 	
-	method cobra(fecha){
-	const fechaTope = new Date(1,9,2017)
-		if (fecha>=fechaTope)
-		{
-			return 1200
-		}else{
-			return 1000
-		}
-	}
+	method cobra(fecha) = if(fecha >= new Date(1,9,2017) ) 1200 else 1000
 	
-	override method habilidad(){
-		return [8*self.guitarra().valor(),100].min()
-	}
+	override method habilidad() = 8*self.guitarra().valor().min(100)
+	
 }
 
 
@@ -123,7 +108,7 @@ class Lugar {
 		capacidad = unaCapacidad
 	}
 	
-	method capacidad() = return capacidad
+	method capacidad() = capacidad
 	method esConcurrido() = self.capacidad() > 5000
 }
 

@@ -17,8 +17,6 @@ method letra() = letra
 method duracion() = duracion
 method titulo() = titulo
 method artista() = artista
-method esCorta(unaCancion){
-	return unaCancion.duracion() < 180
-}
+method esCorta(unaCancion) =  unaCancion.duracion() < 180
 
 }
