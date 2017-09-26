@@ -1,11 +1,15 @@
+import Album.*
+
 class Musico {
 	var habilidad
 	var tipoDeMusico
+	const albumes
 		
-	constructor(unTipoDeMusico){
+	constructor(unTipoDeMusico, unosAlbumes){
 		self.tipoDeMusico(unTipoDeMusico)
+		albumes = unosAlbumes
 	}
-	constructor(unTipoDeMusico,unaHabilidad) = self(unTipoDeMusico){
+	constructor(unTipoDeMusico, unosAlbumes, unaHabilidad) = self(unTipoDeMusico, unosAlbumes){
 		self.habilidad(unaHabilidad)
 	}
 	
@@ -13,6 +17,9 @@ class Musico {
 	method tipoDeMusico(unTipo){
 		tipoDeMusico = unTipo
 	}
+	method albumes() = albumes
+	
+	method agregarAlbum(unAlbum) = self.albumes().add(unAlbum)	
 	
 	method habilidad() = habilidad
 		
@@ -28,6 +35,9 @@ class Musico {
 	}
 	method cobra(presentacion) = self.tipoDeMusico().cobra(presentacion)
 	method interpretaBien(cancion) = self.tipoDeMusico().interpretaBien(cancion)
+	
+	method duracionObra() = return self.albumes().sum({album => album.duracionTotalAlbum()})
+	
 	
 	/*method esMinimalista(unArtista){
 		unArtista.
