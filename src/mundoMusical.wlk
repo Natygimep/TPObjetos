@@ -26,7 +26,9 @@ class Musico {
 		self.esSolista(false)
 	}
 	
-	
+	/*method esMinimalista(unArtista){
+		unArtista.
+	}*/
 }
 
 class MusicoDeGrupo inherits Musico {
