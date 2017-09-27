@@ -19,7 +19,7 @@ constructor(unTitulo, unArtista, unaListaDeCanciones, unasCopiasLanzadas, unasCo
 	}
 method titulo() = titulo
 method artista() = artista
-method canciones() = canciones	
+method canciones() = canciones
 method copiasLanzadas() = copiasLanzadas
 
 method copiasVendidas() = copiasVendidas
@@ -31,11 +31,8 @@ method fechaLanzamiento(unaFecha){
 	fechaLanzamiento = unaFecha
 }
 
-/*method duracionTotalAlbum(){
-	return self.canciones().sum({cancion => cancion.duracion()})
-}*/
 method duracionTotalAlbum(){
-	return 100
+	return self.canciones().sum({cancion => cancion.duracion()})
 }
 
 

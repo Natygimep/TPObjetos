@@ -19,6 +19,8 @@ class Musico {
 	}
 	method albumes() = albumes
 	
+	method canciones() = self.albumes().flatMap({unAlbum => unAlbum.canciones()})
+	
 	method agregarAlbum(unAlbum) = self.albumes().add(unAlbum)	
 	
 	method habilidad() = habilidad
@@ -36,12 +38,9 @@ class Musico {
 	method cobra(presentacion) = self.tipoDeMusico().cobra(presentacion)
 	method interpretaBien(cancion) = self.tipoDeMusico().interpretaBien(cancion)
 	
-	method duracionObra() = return self.albumes().sum({album => album.duracionTotalAlbum()})
-	
-	
-	/*method esMinimalista(unArtista){
-		unArtista.
-	}*/
+	method duracionObra() = self.albumes().sum({unAlbum => unAlbum.duracionTotalAlbum()})
+
+	method esMinimalista() = self.canciones().all({cancion => cancion.esCorta()})
 }
 
 class TipoMusicoDeGrupo{

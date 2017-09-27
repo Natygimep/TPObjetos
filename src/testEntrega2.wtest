@@ -23,14 +23,8 @@ describe "tests entrega 2"{
 	const justCrisantemo
 	
 fixture {
-	
-    lucia = new Musico(new TipoMusicoSolista("familia"),[],70)
-    joaquin = new Musico(new TipoMusicoDeGrupo(5),[especialLaFamilia],20)
-    luisAlberto = new Musico(new TipoMusicoReCapo(fender),[paraLosArboles,justCrisantemo])
-	fender = new Guitarra(10)
+    fender = new Guitarra(10)
 	gibson = new Guitarra(15)
-    soledad = new Musico(new TipoMusicoSolista("amor"),[laSole],55)
-    kike = new Musico(new TipoMusicoDeGrupo(20),[],60)
     cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312, "Cisne", luisAlberto)
     laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "La familia", joaquin)
     eres = new Cancion("Eres lo mejor que me pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres lo que le dio brillo al día a día, y así será por siempre, no cambiará, hasta el final de mis días", 145, "Eres", soledad)
@@ -41,23 +35,28 @@ fixture {
     laSole = new Album("La Sole", soledad, [eres, corazonAmericano], 200000, 130000, 04/02/2005)
     paraLosArboles = new Album("Para los arboles", luisAlberto, [cisne, almaDeDiamante], 50000, 49000, 31/03/2003)
     justCrisantemo = new Album("Just crisantemo", luisAlberto, [crisantemo], 28000, 27500, 05/12/2007)
+    lucia = new Musico(new TipoMusicoSolista("familia"),[],70)
+    joaquin = new Musico(new TipoMusicoDeGrupo(5),[especialLaFamilia],20)
+    luisAlberto = new Musico(new TipoMusicoReCapo(fender),[paraLosArboles,justCrisantemo])
+    soledad = new Musico(new TipoMusicoSolista("amor"),[laSole],55)
+    kike = new Musico(new TipoMusicoDeGrupo(20),[],60)
 }
 test "La canción Crisantemo es corta"{
-	assert.that(crisantemo.esCorta(crisantemo))
+	assert.that(crisantemo.esCorta())
 }
 test "La canción Alma de diamante es corta"{
-	assert.notThat(almaDeDiamante.esCorta(almaDeDiamante))
+	assert.notThat(almaDeDiamante.esCorta())
 }
-/*test "Soledad es minimalista"{
-	assert.equals(false)
+test "Soledad es minimalista"{
+	assert.that(soledad.esMinimalista())
 }
 test "Luis Alberto es minimalista"{
-	assert.equals(false)
+	assert.notThat(luisAlberto.esMinimalista())
 }
 test "Joaquín es minimalista"{
-	assert.equals(false)
+	assert.notThat(joaquin.esMinimalista())
 }
-test "Qué canciones de Luis Alberto tienen la palabra cielo"{
+/*test "Qué canciones de Luis Alberto tienen la palabra cielo"{
 	assert.equals(false)
 }
 test "Qué canciones de Luis Alberto tienen la palabra pujante"{

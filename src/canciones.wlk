@@ -17,6 +17,6 @@ method letra() = letra
 method duracion() = duracion
 method titulo() = titulo
 method artista() = artista
-method esCorta(unaCancion) =  unaCancion.duracion() < 180
+method esCorta() =  self.duracion() < 180
 
 }
