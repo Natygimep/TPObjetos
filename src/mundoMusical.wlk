@@ -38,9 +38,13 @@ class Musico {
 	method cobra(presentacion) = self.tipoDeMusico().cobra(presentacion)
 	method interpretaBien(cancion) = self.tipoDeMusico().interpretaBien(cancion)
 	
+	method esMinimalista() = self.canciones().all({cancion => cancion.esCorta()})
+	
+	method cancionesConLaPalabra(unaPalabra) = self.canciones().filter({unaCancion => unaCancion.letra().contains(unaPalabra)})
+	
 	method duracionObra() = self.albumes().sum({unAlbum => unAlbum.duracionTotalAlbum()})
 
-	method esMinimalista() = self.canciones().all({cancion => cancion.esCorta()})
+	
 }
 
 class TipoMusicoDeGrupo{
