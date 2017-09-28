@@ -47,16 +47,16 @@ fixture {
 test "La canción Crisantemo es corta"{
 	assert.that(crisantemo.esCorta())
 }
-test "La canción Alma de diamante es corta"{
+test "La canción Alma de diamante no es corta"{
 	assert.notThat(almaDeDiamante.esCorta())
 }
 test "Soledad es minimalista"{
 	assert.that(soledad.esMinimalista())
 }
-test "Luis Alberto es minimalista"{
+test "Luis Alberto no es minimalista"{
 	assert.notThat(luisAlberto.esMinimalista())
 }
-test "Joaquín es minimalista"{
+test "Joaquín no es minimalista"{
 	assert.notThat(joaquin.esMinimalista())
 }
 test "Qué canciones de Luis Alberto tienen la palabra cielo"{
@@ -74,24 +74,24 @@ test "Cuántos segundos dura la obra de Soledad"{
 }
 test "Cuántos segundos dura la obra de Luis Alberto"{
 	assert.equals(luisAlberto.duracionObra(),703)
-}/* 
+} 
 test "Qué canción es la mas larga del álbum Para los árboles"{
-	assert.equals(false)
+	assert.that(paraLosArboles.cancionMasLarga() == almaDeDiamante)
 }
 test"Qué canción es la mas larga del álbum La Sole"{
-	assert.equals(false)
+	assert.that(laSole.cancionMasLarga() == eres)
 }
 test "Qué canción es la mas larga del álbum Especial la familia"{
-	assert.equals(false)
+	assert.that(especialLaFamilia.cancionMasLarga() == laFamilia)
 }
 test "Luis Alberto la pegó"{
-	assert.equals(false)
+	assert.that(luisAlberto.laPego())
 }
-test "Sole la pegó"{
-	assert.equals(false)
+test "Soledad no la pegó"{
+	assert.notThat(soledad.laPego())
 }
 test "Joaquín la pegó"{
-	assert.equals(false)
-}*/
+	assert.that(joaquin.laPego())
+}
 }
 

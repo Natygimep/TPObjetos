@@ -44,7 +44,7 @@ class Musico {
 	
 	method duracionObra() = self.albumes().sum({unAlbum => unAlbum.duracionTotalAlbum()})
 
-	
+	method laPego() = self.albumes().all({unAlbum => unAlbum.tieneBuenasVentas()})
 }
 
 class TipoMusicoDeGrupo{

@@ -35,5 +35,12 @@ method duracionTotalAlbum(){
 	return self.canciones().sum({cancion => cancion.duracion()})
 }
 
+method cancionMasLarga(){
+	return self.canciones().max({unaCancion => unaCancion.letra().size()})
+}
+
+method tieneBuenasVentas(){
+	return copiasVendidas / copiasLanzadas > 0.75 
+}
 
 }
