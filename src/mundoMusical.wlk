@@ -121,13 +121,11 @@ object laTrastienda inherits Lugar(400){
 }
 
 
-/*const albumParaLosArboles = [cisne,almaDeDiamante]
-	const albumJustCrisantemo = [crisantemo]
+
 	
 	
 //method apareceEn(palabra) = self.todasLasCanciones().filter({cancion => cancion.letra().contains(palabra)}) // Este método tiene problemas con las letras Mayúsculas y minúsculas
-}
 
 
 
- */
+ 
