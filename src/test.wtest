@@ -1,6 +1,7 @@
 import mundoMusical.*
 import guitarra.*
 import canciones.*
+import presentacion.*
 
 describe "tests respecto de los músicos" {
 
@@ -12,40 +13,38 @@ describe "tests respecto de los músicos" {
 	const cisne
 	const laFamilia
 	const lunaPark
-	const musicoSolista
-	const musicoDeGrupo
-	const musicoReCapo
+	const presentacionLunaPark
+	const presentacionLaTrastienda
 	
 fixture {
-	musicoSolista = new TipoMusicoSolista("amor")
-    musicoDeGrupo = new TipoMusicoDeGrupo(5)
-    musicoReCapo = new TipoMusicoReCapo(fender)
-    lucia = new Musico(70, musicoSolista)
-    joaquin = new Musico(20, musicoDeGrupo)
-    luisAlberto = new Musico(0, musicoReCapo)
-	fender = new Guitarra(10)
+    fender = new Guitarra(10)
 	gibson = new Guitarra(15)
 	cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,"cisne", joaquin)
     laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "laFamilia", joaquin)
 	lunaPark = new Lugar(9290)
+	lucia = new Musico(new TipoMusicoSolista("familia"),[],70)
+    joaquin = new Musico(new TipoMusicoDeGrupo(5),[],20)
+    luisAlberto = new Musico(new TipoMusicoReCapo(fender),[])
+    presentacionLunaPark = new Presentacion(lunaPark, new Date(20,4,2017), [luisAlberto,joaquin,lucia])
+	presentacionLaTrastienda = new Presentacion(laTrastienda, new Date(15,11,2017), [luisAlberto,joaquin,lucia])
 }
 
 test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
 	
-    joaquin.tocaEnGrupo()
+	joaquin.banda("Pimpinela")
 	assert.equals(joaquin.habilidad(), 25)
 
 }
 
 test "La habilidad de Joaquín cantando solo debe ser 20" {
-
+	
 	assert.equals(joaquin.habilidad(), 20)
 
 }
 
 test "La habilidad de Lucía cantando en Pimpinela debe ser 50" {
 
-	lucia.tocaEnGrupo()
+	lucia.banda("Pimpinela")
 	assert.equals(lucia.habilidad(), 50)
 
 }
@@ -57,18 +56,18 @@ test "La habilidad de Lucía cantando sola debe ser 70" {
 }
 
 test "La habilidad de Luis Alberto tocando con la fender es 80" {
-	luisAlberto.guitarra(fender)
+
 	assert.equals(luisAlberto.habilidad(), 80)
 }
 
 test "La habilidad de Luis Alberto tocando con la gibson sana es 100" {
-	luisAlberto.guitarra(gibson)
+	luisAlberto.tipoDeMusico().guitarra(gibson)
 	assert.equals(luisAlberto.habilidad(), 100)
 }
 
 test "La habilidad de Luis Alberto tocando con la gibson maltratada es 40" {
-	gibson.valor(5)
-	luisAlberto.guitarra(gibson)
+	gibson.maltratar()
+	luisAlberto.tipoDeMusico().guitarra(gibson)
 	assert.equals(luisAlberto.habilidad(), 40)
 }
 
@@ -98,12 +97,14 @@ test "Luis Alberto interpreta bien la canción La Familia" {
 
 test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {   //no importa donde actúa, es el precio de la hora
 	
-	joaquin.tocaEnGrupo()
-	assert.equals(joaquin.cobra(lunaPark), 50)
+	joaquin.banda("Pimpinela")
+	assert.equals(joaquin.cobra(presentacionLunaPark), 50)
 }
 
 test "Joaquín actúa solo en La Trastienda y cobra 100" {             //no importa donde actúa, es el precio de la hora
-	assert.equals(joaquin.cobra(laTrastienda), 100)
+	presentacionLaTrastienda.musicosQueTocan().clear()
+	presentacionLaTrastienda.musicosQueTocan().add(joaquin)
+	assert.equals(joaquin.cobra(presentacionLaTrastienda), 100)
 }
 
 test "la capacidad de La Trastienda para el 05/08/2017 es 700" {
@@ -118,33 +119,28 @@ test "la capacidad de La Trastienda para el 08/08/2017 es 400" {
 }
 
 test "Lucía cobra 500 por actuar ¿con Pimpinela? en el Luna Park" {      //no importa si canta sola o no
-	assert.equals(lucia.cobra(lunaPark), 500)
+	assert.equals(lucia.cobra(presentacionLunaPark), 500)
 }
 
 test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {   //no importa si canta sola o no
-	assert.equals(lucia.cobra(laTrastienda), 400)
+	assert.equals(lucia.cobra(presentacionLaTrastienda), 400)
 }
 
 test "Luis Alberto cobra 1000 por actuar antes de septiembre 2017 en el Luna Park" {
-	const unaFecha = new wollok.lang.Date(01,08,2017)
-	assert.equals(luisAlberto.cobra(unaFecha), 1000)
+	assert.equals(luisAlberto.cobra(new Presentacion(lunaPark, new wollok.lang.Date(01,08,2017), [luisAlberto,joaquin,lucia])), 1000)
 }
 
 test "Luis Alberto cobra 1200 por actuar despues de septiembre 2017 en el La Trastienda" {
-    const unaFecha = new wollok.lang.Date(01,09,2017)
-	assert.equals(luisAlberto.cobra(unaFecha), 1200)
+	assert.equals(luisAlberto.cobra(new Presentacion(laTrastienda, new wollok.lang.Date(01,09,2017), [luisAlberto,joaquin,lucia])), 1200)
 }
 
 test "El costo de la presentación de los tres en el Luna Park es 1550" {
-	 const unaFecha = new wollok.lang.Date(01,08,2017)
-	joaquin.tocaEnGrupo()
-	assert.equals(lucia.cobra(lunaPark)+joaquin.cobra(lunaPark)+luisAlberto.cobra(unaFecha), 1550)
+
+	assert.equals(presentacionLunaPark.costo(), 1550)
 }
 
 test "El costo de la presentación de los tres en el La Trastienda el 15/11/2017 es 1650" {
-	joaquin.tocaEnGrupo()
-	const unaFecha = new wollok.lang.Date(15,11,2017)
-	assert.equals(lucia.cobra(laTrastienda)+joaquin.cobra(laTrastienda)+luisAlberto.cobra(unaFecha), 1650)
+	assert.equals(presentacionLaTrastienda.costo(), 1650)
 }
 }
 

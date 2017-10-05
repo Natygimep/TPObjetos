@@ -8,5 +8,8 @@ class Guitarra {
 	 method valor(nuevoValor) {
 	 	valor = nuevoValor
 	 }      
-
+	
+	method maltratar() {
+		self.valor(5)
+	}
 }
