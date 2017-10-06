@@ -8,7 +8,7 @@ class Cancion {
 	const titulo
 	const artista
 
-	constructor(unaLetra, unaDuracion, unTitulo, unArtista){
+	constructor(unTitulo, unaDuracion, unArtista, unaLetra){
 		letra = unaLetra
 		duracion = unaDuracion
 		titulo = unTitulo

@@ -21,16 +21,14 @@ class Presentacion {
 }
 
 class Lugar {
-	const capacidad
-	
-	constructor (unaCapacidad) {
-		capacidad = unaCapacidad
-	}
-	
-	method capacidad() = capacidad
-	method esConcurrido() = self.capacidad() > 5000
+	method capacidad(unaFecha)
+	method esConcurrido(unaFecha) = self.capacidad(unaFecha) > 5000
 }
 
-object laTrastienda inherits Lugar(400){
-	method capacidad(unaFecha) = if (unaFecha.dayOfWeek() == 6) 700 else 400
+object laTrastienda inherits Lugar{
+	override method capacidad(unaFecha) = if (unaFecha.dayOfWeek() == 6) 700 else 400
+}
+
+object lunaPark inherits Lugar{
+	override method capacidad(unaFecha) = 9290
 }

@@ -1,32 +1,19 @@
-import mundoMusical.*
-import guitarra.*
-import canciones.*
+import testFixtureAuxiliar.*
 import presentacion.*
 
 describe "tests respecto de los músicos" {
 
-    const lucia
-	const joaquin
-	const luisAlberto
-	const fender
-	const gibson
-	const cisne
-	const laFamilia
-	const lunaPark
-	const presentacionLunaPark
-	const presentacionLaTrastienda
+   	const lucia = fixtureAuxiliar.lucia()
+	const joaquin = fixtureAuxiliar.joaquin()
+	const luisAlberto = fixtureAuxiliar.luisAlberto()
+	const gibson = fixtureAuxiliar.gibson()
+	const cisne = fixtureAuxiliar.cisne()
+	const laFamilia = fixtureAuxiliar.laFamilia()
+	const presentacionLunaPark = fixtureAuxiliar.presentacionLunaPark()
+	const presentacionLaTrastienda = fixtureAuxiliar.presentacionLaTrastienda()
 	
 fixture {
-    fender = new Guitarra(10)
-	gibson = new Guitarra(15)
-	cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,"cisne", joaquin)
-    laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "laFamilia", joaquin)
-	lunaPark = new Lugar(9290)
-	lucia = new Musico(new TipoMusicoSolista("familia"),70)
-    joaquin = new Musico(new TipoMusicoDeGrupo(5),20)
-    luisAlberto = new Musico(new TipoMusicoReCapo(fender))
-    presentacionLunaPark = new Presentacion(lunaPark, new Date(20,4,2017), [luisAlberto,joaquin,lucia])
-	presentacionLaTrastienda = new Presentacion(laTrastienda, new Date(15,11,2017), [luisAlberto,joaquin,lucia])
+	fixtureAuxiliar.inicializar()
 }
 
 test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {

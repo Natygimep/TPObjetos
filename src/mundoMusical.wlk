@@ -1,5 +1,3 @@
-import Album.*
-
 class Musico {
 	var tipoDeMusico
 	const albumes = []
@@ -96,7 +94,7 @@ class TipoMusicoSolista inherits TipoDeMusico {
 	}
 	method palabra() = palabra
 	
-	method cobra(presentacion) = if (presentacion.lugar().esConcurrido()) 500 else 400
+	method cobra(presentacion) = if (presentacion.lugar().esConcurrido(presentacion.fecha())) 500 else 400
 	
 	method interpretaBien(cancion) = (cancion.letra().contains(self.palabra()))
 	

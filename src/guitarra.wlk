@@ -12,4 +12,5 @@ class Guitarra {
 	method maltratar() {
 		self.valor(5)
 	}
+	
 }
