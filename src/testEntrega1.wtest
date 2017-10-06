@@ -1,0 +1,133 @@
+import testFixtureAuxiliar.*
+import presentacion.*
+
+describe "tests respecto de los músicos" {
+
+   	const lucia = fixtureAuxiliar.lucia()
+	const joaquin = fixtureAuxiliar.joaquin()
+	const luisAlberto = fixtureAuxiliar.luisAlberto()
+	const gibson = fixtureAuxiliar.gibson()
+	const cisne = fixtureAuxiliar.cisne()
+	const laFamilia = fixtureAuxiliar.laFamilia()
+	const presentacionLunaPark = fixtureAuxiliar.presentacionLunaPark()
+	const presentacionLaTrastienda = fixtureAuxiliar.presentacionLaTrastienda()
+	
+fixture {
+	fixtureAuxiliar.inicializar()
+}
+
+test "La habilidad de Joaquín cantando en Pimpinela debe ser 25" {
+	
+	joaquin.banda("Pimpinela")
+	assert.equals(joaquin.habilidad(), 25)
+
+}
+
+test "La habilidad de Joaquín cantando solo debe ser 20" {
+	
+	assert.equals(joaquin.habilidad(), 20)
+
+}
+
+test "La habilidad de Lucía cantando en Pimpinela debe ser 50" {
+
+	lucia.banda("Pimpinela")
+	assert.equals(lucia.habilidad(), 50)
+
+}
+
+test "La habilidad de Lucía cantando sola debe ser 70" {
+
+	assert.equals(lucia.habilidad(), 70)
+
+}
+
+test "La habilidad de Luis Alberto tocando con la fender es 80" {
+
+	assert.equals(luisAlberto.habilidad(), 80)
+}
+
+test "La habilidad de Luis Alberto tocando con la gibson sana es 100" {
+	luisAlberto.tipoDeMusico().guitarra(gibson)
+	assert.equals(luisAlberto.habilidad(), 100)
+}
+
+test "La habilidad de Luis Alberto tocando con la gibson maltratada es 40" {
+	gibson.maltratar()
+	luisAlberto.tipoDeMusico().guitarra(gibson)
+	assert.equals(luisAlberto.habilidad(), 40)
+}
+
+test "Joaquín interpreta mal la canción La Familia" {
+	assert.notThat(joaquin.interpretaBien(laFamilia))
+}
+
+test "Joaquín interpreta bien la canción Cisne" {
+	assert.that(joaquin.interpretaBien(cisne))
+}
+
+test "Lucía interpreta bien la canción La Familia" {
+	assert.that(lucia.interpretaBien(laFamilia))
+}
+
+test "Lucía interpreta mal la canción Cisne" {
+	assert.notThat(lucia.interpretaBien(cisne))
+}
+
+test "Luis Alberto interpreta bien la canción Cisne" {
+	assert.that(luisAlberto.interpretaBien(cisne))
+}
+
+test "Luis Alberto interpreta bien la canción La Familia" {
+	assert.that(luisAlberto.interpretaBien(laFamilia))
+}
+
+test "Joaquín cobra 50 por actuar con Pimpinela en el Luna Park" {   //no importa donde actúa, es el precio de la hora
+	
+	joaquin.banda("Pimpinela")
+	assert.equals(joaquin.cobra(presentacionLunaPark), 50)
+}
+
+test "Joaquín actúa solo en La Trastienda y cobra 100" {             //no importa donde actúa, es el precio de la hora
+	presentacionLaTrastienda.musicosQueTocan().clear()
+	presentacionLaTrastienda.musicosQueTocan().add(joaquin)
+	assert.equals(joaquin.cobra(presentacionLaTrastienda), 100)
+}
+
+test "la capacidad de La Trastienda para el 05/08/2017 es 700" {
+	
+	const unaFecha = new wollok.lang.Date(05,08,2017)
+	assert.equals(laTrastienda.capacidad(unaFecha), 700)
+}
+
+test "la capacidad de La Trastienda para el 08/08/2017 es 400" {
+	const unaFecha = new wollok.lang.Date(08,08,2017)
+	assert.equals(laTrastienda.capacidad(unaFecha), 400)
+}
+
+test "Lucía cobra 500 por actuar ¿con Pimpinela? en el Luna Park" {      //no importa si canta sola o no
+	assert.equals(lucia.cobra(presentacionLunaPark), 500)
+}
+
+test "Lucía cobra 400 por actuar ¿con Pimpinela? en el La Trastienda" {   //no importa si canta sola o no
+	assert.equals(lucia.cobra(presentacionLaTrastienda), 400)
+}
+
+test "Luis Alberto cobra 1000 por actuar antes de septiembre 2017 en el Luna Park" {
+	assert.equals(luisAlberto.cobra(new Presentacion(lunaPark, new wollok.lang.Date(01,08,2017), [luisAlberto,joaquin,lucia])), 1000)
+}
+
+test "Luis Alberto cobra 1200 por actuar despues de septiembre 2017 en el La Trastienda" {
+	assert.equals(luisAlberto.cobra(new Presentacion(laTrastienda, new wollok.lang.Date(01,09,2017), [luisAlberto,joaquin,lucia])), 1200)
+}
+
+test "El costo de la presentación de los tres en el Luna Park es 1550" {
+
+	assert.equals(presentacionLunaPark.costo(), 1550)
+}
+
+test "El costo de la presentación de los tres en el La Trastienda el 15/11/2017 es 1650" {
+	assert.equals(presentacionLaTrastienda.costo(), 1650)
+}
+}
+

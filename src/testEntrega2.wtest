@@ -1,0 +1,71 @@
+import testFixtureAuxiliar.*
+import Album.*
+
+describe "tests entrega 2"{
+
+	const joaquin = fixtureAuxiliar.joaquin()
+	const luisAlberto = fixtureAuxiliar.luisAlberto()
+	const soledad = fixtureAuxiliar.soledad()
+	const kike = fixtureAuxiliar.kike()
+	const laFamilia = fixtureAuxiliar.laFamilia()
+	const eres = fixtureAuxiliar.eres()
+	const almaDeDiamante = fixtureAuxiliar.almaDeDiamante()
+	const crisantemo = fixtureAuxiliar.crisantemo()
+	const especialLaFamilia = fixtureAuxiliar.especialLaFamilia()
+	const laSole = fixtureAuxiliar.laSole()
+	const paraLosArboles = fixtureAuxiliar.paraLosArboles()
+	
+fixture {
+	fixtureAuxiliar.inicializar()   
+}
+test "La canción Crisantemo es corta"{
+	assert.that(crisantemo.esCorta())
+}
+test "La canción Alma de diamante no es corta"{
+	assert.notThat(almaDeDiamante.esCorta())
+}
+test "Soledad es minimalista"{
+	assert.that(soledad.esMinimalista())
+}
+test "Luis Alberto no es minimalista"{
+	assert.notThat(luisAlberto.esMinimalista())
+}
+test "Joaquín no es minimalista"{
+	assert.notThat(joaquin.esMinimalista())
+}
+test "Qué canciones de Luis Alberto tienen la palabra cielo"{
+	assert.that(luisAlberto.cancionesConLaPalabra("cielo").contains(almaDeDiamante))
+	assert.that(luisAlberto.cancionesConLaPalabra("cielo").contains(crisantemo))
+}
+test "Qué canciones de Luis Alberto tienen la palabra pujante"{
+	assert.that(luisAlberto.cancionesConLaPalabra("pujante").isEmpty())
+}
+test "Cuántos segundos dura la obra de Quique"{
+	assert.equals(kike.duracionObra(),0)
+}
+test "Cuántos segundos dura la obra de Soledad"{
+	assert.equals(soledad.duracionObra(),299)
+}
+test "Cuántos segundos dura la obra de Luis Alberto"{
+	assert.equals(luisAlberto.duracionObra(),703)
+} 
+test "Qué canción es la mas larga del álbum Para los árboles"{
+	assert.that(paraLosArboles.cancionMasLarga(compararPorLetra) == almaDeDiamante)
+}
+test"Qué canción es la mas larga del álbum La Sole"{
+	assert.that(laSole.cancionMasLarga(compararPorLetra) == eres)
+}
+test "Qué canción es la mas larga del álbum Especial la familia"{
+	assert.that(especialLaFamilia.cancionMasLarga(compararPorLetra) == laFamilia)
+}
+test "Luis Alberto la pegó"{
+	assert.that(luisAlberto.laPego())
+}
+test "Soledad no la pegó"{
+	assert.notThat(soledad.laPego())
+}
+test "Joaquín la pegó"{
+	assert.that(joaquin.laPego())
+}
+}
+
