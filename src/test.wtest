@@ -22,9 +22,9 @@ fixture {
 	cisne = new Cancion("Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar", 312,"cisne", joaquin)
     laFamilia = new Cancion("Quiero brindar por mi gente sencilla, por el amor brindo por la familia", 264, "laFamilia", joaquin)
 	lunaPark = new Lugar(9290)
-	lucia = new Musico(new TipoMusicoSolista("familia"),[],70)
-    joaquin = new Musico(new TipoMusicoDeGrupo(5),[],20)
-    luisAlberto = new Musico(new TipoMusicoReCapo(fender),[])
+	lucia = new Musico(new TipoMusicoSolista("familia"),70)
+    joaquin = new Musico(new TipoMusicoDeGrupo(5),20)
+    luisAlberto = new Musico(new TipoMusicoReCapo(fender))
     presentacionLunaPark = new Presentacion(lunaPark, new Date(20,4,2017), [luisAlberto,joaquin,lucia])
 	presentacionLaTrastienda = new Presentacion(laTrastienda, new Date(15,11,2017), [luisAlberto,joaquin,lucia])
 }

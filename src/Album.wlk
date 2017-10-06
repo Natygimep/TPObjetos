@@ -43,12 +43,26 @@ class Album {
 		return self.canciones().sum({cancion => cancion.duracion()})
 	}
 
-	method cancionMasLarga(){
+	/*method cancionMasLarga(){
 		return self.canciones().max({unaCancion => unaCancion.letra().size()})
+	}*/
+	
+	method cancionMasLarga(unCriterio) {
+		return self.canciones().max({unaCancion => unCriterio.esLaMayor(unaCancion)})
 	}
-
+	
 	method tieneBuenasVentas(){
 		return copiasVendidas / copiasLanzadas > 0.75 
 	}
 
+}
+
+object compararPorLetra {
+	method esLaMayor(unaCancion) = unaCancion.letra().size()
+}
+object compararPorSegundos {
+	method esLaMayor(unaCancion) =	unaCancion.duracion()
+}
+object compararPorTitulo {
+	method esLaMayor(unaCancion) = unaCancion.titulo().size()
 }

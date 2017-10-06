@@ -14,7 +14,7 @@ class Presentacion {
 	method fecha() = fecha
 	method musicosQueTocan() = musicosQueTocan
 	
-	method tocaSolo() =	self.musicosQueTocan().size() <= 1 // no se si sera la forma mas efefctiva de hacerlo
+	method tocaSolo() =	self.musicosQueTocan().size() == 1 // no se si sera la forma mas efefctiva de hacerlo
 	
 	method costo() = self.musicosQueTocan().sum({unMusico => unMusico.cobra(self)})
 	

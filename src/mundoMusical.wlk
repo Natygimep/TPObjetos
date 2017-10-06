@@ -2,14 +2,13 @@ import Album.*
 
 class Musico {
 	var tipoDeMusico
-	const albumes
+	const albumes = []
 	var banda = null
 		
-	constructor(unTipoDeMusico, unosAlbumes){
+	constructor(unTipoDeMusico){
 		self.tipoDeMusico(unTipoDeMusico)
-		albumes = unosAlbumes
 	}
-	constructor(unTipoDeMusico, unosAlbumes, unaHabilidad) = self(unTipoDeMusico, unosAlbumes){
+	constructor(unTipoDeMusico, unaHabilidad) = self(unTipoDeMusico){
 		self.habilidad(unaHabilidad)
 	}
 	
@@ -31,13 +30,14 @@ class Musico {
 	
 	method canciones() = self.albumes().flatMap({unAlbum => unAlbum.canciones()})
 	
-	method agregarAlbum(unAlbum) = self.albumes().add(unAlbum)	
+	method agregarAlbumes(unosAlbumes) = self.albumes().addAll(unosAlbumes)	
 	
-	method habilidad() = self.tipoDeMusico().habilidades(self)
+	method habilidad() = self.tipoDeMusico().habilidadSegunMusico(self)
 	
 	method habilidad(unaHabilidad) = self.tipoDeMusico().habilidad(unaHabilidad)
 	
 	method cobra(presentacion) = self.tipoDeMusico().cobra(presentacion)
+	
 	method interpretaBien(cancion) = self.tipoDeMusico().interpretaBien(cancion)
 	
 	method esMinimalista() = self.canciones().all({cancion => cancion.esCorta()})
@@ -73,7 +73,7 @@ class TipoMusicoDeGrupo inherits TipoDeMusico {
 	
 	method interpretaBien(cancion) = (cancion.duracion() > 300)
 	
-	method habilidades(unaPersona) {
+	method habilidadSegunMusico(unaPersona) {
 		if(unaPersona.perteneceUnaBanda()){
 			return unaPersona.tipoDeMusico().habilidad() + self.aumentoDeHabilidad()
 		} 
@@ -100,7 +100,7 @@ class TipoMusicoSolista inherits TipoDeMusico {
 	
 	method interpretaBien(cancion) = (cancion.letra().contains(self.palabra()))
 	
-	method habilidades(unaPersona) = if(unaPersona.perteneceUnaBanda()){
+	method habilidadSegunMusico(unaPersona) = if(unaPersona.perteneceUnaBanda()){
 			return unaPersona.tipoDeMusico().habilidad() - 20
 		} 
 		else 
@@ -124,6 +124,6 @@ class TipoMusicoReCapo inherits TipoDeMusico{
 	
 	method cobra(presentacion) = if(presentacion.fecha() >= new Date(1,9,2017) ) 1200 else 1000
 	
-	method habilidades(unaPersona) = (self.guitarra().valor() * 8).min(100)
+	method habilidadSegunMusico(unaPersona) = (self.guitarra().valor() * 8).min(100)
 
 } 

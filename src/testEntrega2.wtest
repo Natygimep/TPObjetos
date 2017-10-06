@@ -38,11 +38,16 @@ fixture {
     paraLosArboles = new Album("Para los arboles", luisAlberto, [cisne, almaDeDiamante], 50000, 49000, 31/03/2003)
     justCrisantemo = new Album("Just crisantemo", luisAlberto, [crisantemo], 28000, 27500, 05/12/2007)
     
-    lucia = new Musico(new TipoMusicoSolista("familia"),[],70)
-    joaquin = new Musico(new TipoMusicoDeGrupo(5),[especialLaFamilia],20)
-    luisAlberto = new Musico(new TipoMusicoReCapo(fender),[paraLosArboles,justCrisantemo])
-    soledad = new Musico(new TipoMusicoSolista("amor"),[laSole],55)
-    kike = new Musico(new TipoMusicoDeGrupo(20),[],60)
+    lucia = new Musico(new TipoMusicoSolista("familia"),70)
+    joaquin = new Musico(new TipoMusicoDeGrupo(5), 20)
+    luisAlberto = new Musico(new TipoMusicoReCapo(fender))
+    soledad = new Musico(new TipoMusicoSolista("amor"),55)
+    kike = new Musico(new TipoMusicoDeGrupo(20),60)
+    
+    joaquin.agregarAlbumes([especialLaFamilia])
+    luisAlberto.agregarAlbumes([paraLosArboles,justCrisantemo])
+    soledad.agregarAlbumes([laSole])
+    
 }
 test "La canción Crisantemo es corta"{
 	assert.that(crisantemo.esCorta())
@@ -76,13 +81,13 @@ test "Cuántos segundos dura la obra de Luis Alberto"{
 	assert.equals(luisAlberto.duracionObra(),703)
 } 
 test "Qué canción es la mas larga del álbum Para los árboles"{
-	assert.that(paraLosArboles.cancionMasLarga() == almaDeDiamante)
+	assert.that(paraLosArboles.cancionMasLarga(compararPorLetra) == almaDeDiamante)
 }
 test"Qué canción es la mas larga del álbum La Sole"{
-	assert.that(laSole.cancionMasLarga() == eres)
+	assert.that(laSole.cancionMasLarga(compararPorLetra) == eres)
 }
 test "Qué canción es la mas larga del álbum Especial la familia"{
-	assert.that(especialLaFamilia.cancionMasLarga() == laFamilia)
+	assert.that(especialLaFamilia.cancionMasLarga(compararPorLetra) == laFamilia)
 }
 test "Luis Alberto la pegó"{
 	assert.that(luisAlberto.laPego())
